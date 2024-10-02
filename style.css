@@ -1,0 +1,41 @@
+/* General Styles */
+body {
+  font-family: "Montserrat", sans-serif;
+  color: #333;
+  background-color: #fff;
+}
+
+h1,
+h2,
+h4 {
+  font-family: "Playfair Display", serif;
+}
+
+section {
+  padding: 60px 0;
+}
+
+header {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #333;
+}
+
+header h1 {
+  text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.7);
+}
+
+/* Buttons */
+.btn-outline-dark {
+  border-radius: 50px;
+}
+
+/* Gallery Images */
+#gallery img {
+  transition: transform 0.3s ease;
+}
+
+#gallery img:hover {
+  transform: scale(1.05);
+}
