@@ -116,6 +116,101 @@
         background-color: #333 !important;
         border-color: #333 !important;
       }
+
+      .price-list-container {
+        border-radius: 8px;
+        overflow: hidden;
+        background: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+        margin-bottom: 2rem;
+        padding-left: 0;
+        padding-right: 0; /* Remove Bootstrap's default gutters */
+      }
+
+      .price-list-header {
+        background-color: #f8f9fa;
+        padding: 15px;
+        margin: 0;
+        border-bottom: 1px solid #e9ecef;
+      }
+
+      .price-list-header.row {
+        margin-left: 0; /* Remove default row margin */
+        margin-right: 0; /* Remove default row margin */
+      }
+
+      .price-list-item {
+        padding: 15px;
+        margin: 0;
+        border-bottom: 1px solid #e9ecef;
+        transition: background-color 0.2s ease;
+      }
+
+      .price-list-item.row {
+        margin-left: 0; /* Remove default row margin */
+        margin-right: 0; /* Remove default row margin */
+      }
+
+      .price-list-container .row {
+        --bs-gutter-x: 0;
+      }
+
+      .price-list-header .col-8,
+      .price-list-header .col-2,
+      .price-list-item .col-8,
+      .price-list-item .col-2 {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+
+      .price-list-item:last-child {
+        border-bottom: none;
+      }
+
+      .price-list-item:hover {
+        background-color: #f8f9fa;
+      }
+
+      h3 {
+        margin-bottom: 1.5rem; /* Consistent spacing below headers */
+      }
+
+      #pricelist h3:first-of-type {
+        margin-top: 0; /* Remove top margin from first h3 */
+      }
+
+      #pricelist .price-list-container:last-of-type {
+        margin-bottom: 0;
+        padding-left: 0;
+        padding-right: 0; /* Remove bottom margin from last container */
+      }
+
+      .price-list-item small {
+        display: block;
+        margin-top: 4px;
+      }
+
+      .price-list-item .btn-link {
+        color: #333;
+        font-size: 0.875rem;
+      }
+
+      .price-list-item .btn-link:hover {
+        color: #000;
+      }
+
+      .price-list-item .collapse p {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+
+      .collapse-arrow {
+        transition: transform 0.2s ease;
+      }
+
+      [aria-expanded="true"] .collapse-arrow {
+        transform: rotate(180deg);
+      }
     </style>
   </head>
   <body>
@@ -284,9 +379,846 @@
     <!-- Price List Section -->
     <section id="pricelist" class="bg-white">
       <div class="container">
-        <h2 class="text-center">Price List</h2>
+        <h2 class="text-center">Wellness Cosmo Beauty Price List</h2>
         <div class="row mt-4">
-          <!-- Add your price list content here -->
+          <h3>[service_set-module_title]</h3>
+          <div class="price-list-container">
+            <div class="price-list-header row">
+              <div class="col-8"><strong>Service</strong></div>
+              <div class="col-2 text-center"><strong>Duration</strong></div>
+              <div class="col-2 text-center"><strong>Price</strong></div>
+            </div>
+            <!-- # This is one row -->
+            <div class="price-list-item row">
+              <div class="col-8">
+                <div>[service-name]</div>
+                <small class="text-muted"
+                  >[service-module_short_description]</small
+                >
+                <div class="mt-2">
+                  <button
+                    class="btn btn-link p-0 text-decoration-none d-flex align-items-center"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#skinConsultationDetails"
+                    aria-expanded="false"
+                    aria-controls="skinConsultationDetails"
+                  >
+                    More Info
+                    <svg
+                      class="ms-1 collapse-arrow"
+                      width="12"
+                      height="12"
+                      viewBox="0 0 16 16"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div
+                class="col-2 d-flex align-items-center justify-content-center"
+              >
+                [duration]
+              </div>
+              <div
+                class="col-2 d-flex align-items-center justify-content-center"
+              >
+                [price]
+              </div>
+              <div class="collapse mt-2 col-12" id="skinConsultationDetails">
+                <small class="mb-0 px-3 text-muted"
+                  >[service-module_details]</small
+                >
+              </div>
+            </div>
+
+            <!-- # This is one row -->
+            <div class="price-list-item row">
+              <div class="col-8">
+                <div>[service-name]</div>
+                <small class="text-muted"
+                  >[service-module_short_description]
+                </small>
+                <div class="mt-2">
+                  <button
+                    class="btn btn-link p-0 text-decoration-none d-flex align-items-center"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#sculptingMassageDetails"
+                    aria-expanded="false"
+                    aria-controls="sculptingMassageDetails"
+                  >
+                    More Info
+                    <svg
+                      class="ms-1 collapse-arrow"
+                      width="12"
+                      height="12"
+                      viewBox="0 0 16 16"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div
+                class="col-2 d-flex align-items-center justify-content-center"
+              >
+                [duration]
+              </div>
+              <div
+                class="col-2 d-flex align-items-center justify-content-center"
+              >
+                [price]
+              </div>
+              <div class="collapse mt-2 col-12" id="sculptingMassageDetails">
+                <small class="mb-0 px-3 text-muted"
+                  >[service-module_details]
+                </small>
+              </div>
+            </div>
+          </div>
+
+          <h3>[service_set-module_title]</h3>
+          <div class="price-list-container">
+            <div class="price-list-header row">
+              <div class="col-8"><strong>Service</strong></div>
+              <div class="col-2 text-center"><strong>Duration</strong></div>
+              <div class="col-2 text-center"><strong>Price</strong></div>
+            </div>
+
+            <!-- # This is one row -->
+            <div class="price-list-item row">
+              <div class="col-8">
+                <div>[service-name]</div>
+                <small class="text-muted"
+                  >[service-module_short_description]</small
+                >
+                <div class="mt-2">
+                  <button
+                    class="btn btn-link p-0 text-decoration-none d-flex align-items-center"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#skinConsultationDetails"
+                    aria-expanded="false"
+                    aria-controls="skinConsultationDetails"
+                  >
+                    More Info
+                    <svg
+                      class="ms-1 collapse-arrow"
+                      width="12"
+                      height="12"
+                      viewBox="0 0 16 16"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div
+                class="col-2 d-flex align-items-center justify-content-center"
+              >
+                [duration]
+              </div>
+              <div
+                class="col-2 d-flex align-items-center justify-content-center"
+              >
+                [price]
+              </div>
+              <div class="collapse mt-2 col-12" id="skinConsultationDetails">
+                <small class="mb-0 px-3 text-muted"
+                  >[service-module_details]</small
+                >
+              </div>
+            </div>
+
+            <!-- # This is one row -->
+            <div class="price-list-item row">
+              <div class="col-8">
+                <div>[service-name]</div>
+                <small class="text-muted"
+                  >[service-module_short_description]
+                </small>
+                <div class="mt-2">
+                  <button
+                    class="btn btn-link p-0 text-decoration-none d-flex align-items-center"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#sculptingMassageDetails"
+                    aria-expanded="false"
+                    aria-controls="sculptingMassageDetails"
+                  >
+                    More Info
+                    <svg
+                      class="ms-1 collapse-arrow"
+                      width="12"
+                      height="12"
+                      viewBox="0 0 16 16"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div
+                class="col-2 d-flex align-items-center justify-content-center"
+              >
+                [duration]
+              </div>
+              <div
+                class="col-2 d-flex align-items-center justify-content-center"
+              >
+                [price]
+              </div>
+              <div class="collapse mt-2 col-12" id="sculptingMassageDetails">
+                <small class="mb-0 px-3 text-muted"
+                  >[service-module_details]
+                </small>
+              </div>
+            </div>
+          </div>
+
+          <h3>[service_set-module_title]</h3>
+          <div class="price-list-container">
+            <div class="price-list-header row">
+              <div class="col-8"><strong>Service</strong></div>
+              <div class="col-2 text-center"><strong>Duration</strong></div>
+              <div class="col-2 text-center"><strong>Price</strong></div>
+            </div>
+
+            <!-- # This is one row -->
+            <div class="price-list-item row">
+              <div class="col-8">
+                <div>[service-name]</div>
+                <small class="text-muted"
+                  >[service-module_short_description]</small
+                >
+                <div class="mt-2">
+                  <button
+                    class="btn btn-link p-0 text-decoration-none d-flex align-items-center"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#skinConsultationDetails"
+                    aria-expanded="false"
+                    aria-controls="skinConsultationDetails"
+                  >
+                    More Info
+                    <svg
+                      class="ms-1 collapse-arrow"
+                      width="12"
+                      height="12"
+                      viewBox="0 0 16 16"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div
+                class="col-2 d-flex align-items-center justify-content-center"
+              >
+                [duration]
+              </div>
+              <div
+                class="col-2 d-flex align-items-center justify-content-center"
+              >
+                [price]
+              </div>
+              <div class="collapse mt-2 col-12" id="skinConsultationDetails">
+                <small class="mb-0 px-3 text-muted"
+                  >[service-module_details]</small
+                >
+              </div>
+            </div>
+
+            <!-- # This is one row -->
+            <div class="price-list-item row">
+              <div class="col-8">
+                <div>[service-name]</div>
+                <small class="text-muted"
+                  >[service-module_short_description]
+                </small>
+                <div class="mt-2">
+                  <button
+                    class="btn btn-link p-0 text-decoration-none d-flex align-items-center"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#sculptingMassageDetails"
+                    aria-expanded="false"
+                    aria-controls="sculptingMassageDetails"
+                  >
+                    More Info
+                    <svg
+                      class="ms-1 collapse-arrow"
+                      width="12"
+                      height="12"
+                      viewBox="0 0 16 16"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div
+                class="col-2 d-flex align-items-center justify-content-center"
+              >
+                [duration]
+              </div>
+              <div
+                class="col-2 d-flex align-items-center justify-content-center"
+              >
+                [price]
+              </div>
+              <div class="collapse mt-2 col-12" id="sculptingMassageDetails">
+                <small class="mb-0 px-3 text-muted"
+                  >[service-module_details]
+                </small>
+              </div>
+            </div>
+          </div>
+
+          <h3>[service_set-module_title]</h3>
+          <div class="price-list-container">
+            <div class="price-list-header row">
+              <div class="col-8"><strong>Service</strong></div>
+              <div class="col-2 text-center"><strong>Duration</strong></div>
+              <div class="col-2 text-center"><strong>Price</strong></div>
+            </div>
+
+            <!-- # This is one row -->
+            <div class="price-list-item row">
+              <div class="col-8">
+                <div>[service-name]</div>
+                <small class="text-muted"
+                  >[service-module_short_description]</small
+                >
+                <div class="mt-2">
+                  <button
+                    class="btn btn-link p-0 text-decoration-none d-flex align-items-center"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#skinConsultationDetails"
+                    aria-expanded="false"
+                    aria-controls="skinConsultationDetails"
+                  >
+                    More Info
+                    <svg
+                      class="ms-1 collapse-arrow"
+                      width="12"
+                      height="12"
+                      viewBox="0 0 16 16"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div
+                class="col-2 d-flex align-items-center justify-content-center"
+              >
+                [duration]
+              </div>
+              <div
+                class="col-2 d-flex align-items-center justify-content-center"
+              >
+                [price]
+              </div>
+              <div class="collapse mt-2 col-12" id="skinConsultationDetails">
+                <small class="mb-0 px-3 text-muted"
+                  >[service-module_details]</small
+                >
+              </div>
+            </div>
+
+            <!-- # This is one row -->
+            <div class="price-list-item row">
+              <div class="col-8">
+                <div>[service-name]</div>
+                <small class="text-muted"
+                  >[service-module_short_description]
+                </small>
+                <div class="mt-2">
+                  <button
+                    class="btn btn-link p-0 text-decoration-none d-flex align-items-center"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#sculptingMassageDetails"
+                    aria-expanded="false"
+                    aria-controls="sculptingMassageDetails"
+                  >
+                    More Info
+                    <svg
+                      class="ms-1 collapse-arrow"
+                      width="12"
+                      height="12"
+                      viewBox="0 0 16 16"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div
+                class="col-2 d-flex align-items-center justify-content-center"
+              >
+                [duration]
+              </div>
+              <div
+                class="col-2 d-flex align-items-center justify-content-center"
+              >
+                [price]
+              </div>
+              <div class="collapse mt-2 col-12" id="sculptingMassageDetails">
+                <small class="mb-0 px-3 text-muted"
+                  >[service-module_details]
+                </small>
+              </div>
+            </div>
+          </div>
+
+          <h3>[service_set-module_title]</h3>
+          <div class="price-list-container">
+            <div class="price-list-header row">
+              <div class="col-8"><strong>Service</strong></div>
+              <div class="col-2 text-center"><strong>Duration</strong></div>
+              <div class="col-2 text-center"><strong>Price</strong></div>
+            </div>
+
+            <!-- # This is one row -->
+            <div class="price-list-item row">
+              <div class="col-8">
+                <div>[service-name]</div>
+                <small class="text-muted"
+                  >[service-module_short_description]</small
+                >
+                <div class="mt-2">
+                  <button
+                    class="btn btn-link p-0 text-decoration-none d-flex align-items-center"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#skinConsultationDetails"
+                    aria-expanded="false"
+                    aria-controls="skinConsultationDetails"
+                  >
+                    More Info
+                    <svg
+                      class="ms-1 collapse-arrow"
+                      width="12"
+                      height="12"
+                      viewBox="0 0 16 16"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div
+                class="col-2 d-flex align-items-center justify-content-center"
+              >
+                [duration]
+              </div>
+              <div
+                class="col-2 d-flex align-items-center justify-content-center"
+              >
+                [price]
+              </div>
+              <div class="collapse mt-2 col-12" id="skinConsultationDetails">
+                <small class="mb-0 px-3 text-muted"
+                  >[service-module_details]</small
+                >
+              </div>
+            </div>
+
+            <!-- # This is one row -->
+            <div class="price-list-item row">
+              <div class="col-8">
+                <div>[service-name]</div>
+                <small class="text-muted"
+                  >[service-module_short_description]
+                </small>
+                <div class="mt-2">
+                  <button
+                    class="btn btn-link p-0 text-decoration-none d-flex align-items-center"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#sculptingMassageDetails"
+                    aria-expanded="false"
+                    aria-controls="sculptingMassageDetails"
+                  >
+                    More Info
+                    <svg
+                      class="ms-1 collapse-arrow"
+                      width="12"
+                      height="12"
+                      viewBox="0 0 16 16"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div
+                class="col-2 d-flex align-items-center justify-content-center"
+              >
+                [duration]
+              </div>
+              <div
+                class="col-2 d-flex align-items-center justify-content-center"
+              >
+                [price]
+              </div>
+              <div class="collapse mt-2 col-12" id="sculptingMassageDetails">
+                <small class="mb-0 px-3 text-muted"
+                  >[service-module_details]
+                </small>
+              </div>
+            </div>
+          </div>
+
+          <h3>[service_set-module_title]</h3>
+          <div class="price-list-container">
+            <div class="price-list-header row">
+              <div class="col-8"><strong>Service</strong></div>
+              <div class="col-2 text-center"><strong>Duration</strong></div>
+              <div class="col-2 text-center"><strong>Price</strong></div>
+            </div>
+
+            <!-- # This is one row -->
+            <div class="price-list-item row">
+              <div class="col-8">
+                <div>[service-name]</div>
+                <small class="text-muted"
+                  >[service-module_short_description]</small
+                >
+                <div class="mt-2">
+                  <button
+                    class="btn btn-link p-0 text-decoration-none d-flex align-items-center"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#skinConsultationDetails"
+                    aria-expanded="false"
+                    aria-controls="skinConsultationDetails"
+                  >
+                    More Info
+                    <svg
+                      class="ms-1 collapse-arrow"
+                      width="12"
+                      height="12"
+                      viewBox="0 0 16 16"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div
+                class="col-2 d-flex align-items-center justify-content-center"
+              >
+                [duration]
+              </div>
+              <div
+                class="col-2 d-flex align-items-center justify-content-center"
+              >
+                [price]
+              </div>
+              <div class="collapse mt-2 col-12" id="skinConsultationDetails">
+                <small class="mb-0 px-3 text-muted"
+                  >[service-module_details]</small
+                >
+              </div>
+            </div>
+
+            <!-- # This is one row -->
+            <div class="price-list-item row">
+              <div class="col-8">
+                <div>[service-name]</div>
+                <small class="text-muted"
+                  >[service-module_short_description]
+                </small>
+                <div class="mt-2">
+                  <button
+                    class="btn btn-link p-0 text-decoration-none d-flex align-items-center"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#sculptingMassageDetails"
+                    aria-expanded="false"
+                    aria-controls="sculptingMassageDetails"
+                  >
+                    More Info
+                    <svg
+                      class="ms-1 collapse-arrow"
+                      width="12"
+                      height="12"
+                      viewBox="0 0 16 16"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div
+                class="col-2 d-flex align-items-center justify-content-center"
+              >
+                [duration]
+              </div>
+              <div
+                class="col-2 d-flex align-items-center justify-content-center"
+              >
+                [price]
+              </div>
+              <div class="collapse mt-2 col-12" id="sculptingMassageDetails">
+                <small class="mb-0 px-3 text-muted"
+                  >[service-module_details]
+                </small>
+              </div>
+            </div>
+          </div>
+
+          <h3>[service_set-module_title]</h3>
+          <div class="price-list-container">
+            <div class="price-list-header row">
+              <div class="col-8"><strong>Service</strong></div>
+              <div class="col-2 text-center"><strong>Duration</strong></div>
+              <div class="col-2 text-center"><strong>Price</strong></div>
+            </div>
+
+            <!-- # This is one row -->
+            <div class="price-list-item row">
+              <div class="col-8">
+                <div>[service-name]</div>
+                <small class="text-muted"
+                  >[service-module_short_description]</small
+                >
+                <div class="mt-2">
+                  <button
+                    class="btn btn-link p-0 text-decoration-none d-flex align-items-center"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#skinConsultationDetails"
+                    aria-expanded="false"
+                    aria-controls="skinConsultationDetails"
+                  >
+                    More Info
+                    <svg
+                      class="ms-1 collapse-arrow"
+                      width="12"
+                      height="12"
+                      viewBox="0 0 16 16"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div
+                class="col-2 d-flex align-items-center justify-content-center"
+              >
+                [duration]
+              </div>
+              <div
+                class="col-2 d-flex align-items-center justify-content-center"
+              >
+                [price]
+              </div>
+              <div class="collapse mt-2 col-12" id="skinConsultationDetails">
+                <small class="mb-0 px-3 text-muted"
+                  >[service-module_details]</small
+                >
+              </div>
+            </div>
+
+            <!-- # This is one row -->
+            <div class="price-list-item row">
+              <div class="col-8">
+                <div>[service-name]</div>
+                <small class="text-muted"
+                  >[service-module_short_description]
+                </small>
+                <div class="mt-2">
+                  <button
+                    class="btn btn-link p-0 text-decoration-none d-flex align-items-center"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#sculptingMassageDetails"
+                    aria-expanded="false"
+                    aria-controls="sculptingMassageDetails"
+                  >
+                    More Info
+                    <svg
+                      class="ms-1 collapse-arrow"
+                      width="12"
+                      height="12"
+                      viewBox="0 0 16 16"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div
+                class="col-2 d-flex align-items-center justify-content-center"
+              >
+                [duration]
+              </div>
+              <div
+                class="col-2 d-flex align-items-center justify-content-center"
+              >
+                [price]
+              </div>
+              <div class="collapse mt-2 col-12" id="sculptingMassageDetails">
+                <small class="mb-0 px-3 text-muted"
+                  >[service-module_details]
+                </small>
+              </div>
+            </div>
+          </div>
+
+          <h3>[service_set-module_title]</h3>
+          <div class="price-list-container">
+            <div class="price-list-header row">
+              <div class="col-8"><strong>Service</strong></div>
+              <div class="col-2 text-center"><strong>Duration</strong></div>
+              <div class="col-2 text-center"><strong>Price</strong></div>
+            </div>
+
+            <!-- # This is one row -->
+            <div class="price-list-item row">
+              <div class="col-8">
+                <div>[service-name]</div>
+                <small class="text-muted"
+                  >[service-module_short_description]</small
+                >
+                <div class="mt-2">
+                  <button
+                    class="btn btn-link p-0 text-decoration-none d-flex align-items-center"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#skinConsultationDetails"
+                    aria-expanded="false"
+                    aria-controls="skinConsultationDetails"
+                  >
+                    More Info
+                    <svg
+                      class="ms-1 collapse-arrow"
+                      width="12"
+                      height="12"
+                      viewBox="0 0 16 16"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div
+                class="col-2 d-flex align-items-center justify-content-center"
+              >
+                [duration]
+              </div>
+              <div
+                class="col-2 d-flex align-items-center justify-content-center"
+              >
+                [price]
+              </div>
+              <div class="collapse mt-2 col-12" id="skinConsultationDetails">
+                <small class="mb-0 px-3 text-muted"
+                  >[service-module_details]</small
+                >
+              </div>
+            </div>
+
+            <!-- # This is one row -->
+            <div class="price-list-item row">
+              <div class="col-8">
+                <div>[service-name]</div>
+                <small class="text-muted"
+                  >[service-module_short_description]
+                </small>
+                <div class="mt-2">
+                  <button
+                    class="btn btn-link p-0 text-decoration-none d-flex align-items-center"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#sculptingMassageDetails"
+                    aria-expanded="false"
+                    aria-controls="sculptingMassageDetails"
+                  >
+                    More Info
+                    <svg
+                      class="ms-1 collapse-arrow"
+                      width="12"
+                      height="12"
+                      viewBox="0 0 16 16"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div
+                class="col-2 d-flex align-items-center justify-content-center"
+              >
+                [duration]
+              </div>
+              <div
+                class="col-2 d-flex align-items-center justify-content-center"
+              >
+                [price]
+              </div>
+              <div class="collapse mt-2 col-12" id="sculptingMassageDetails">
+                <small class="mb-0 px-3 text-muted"
+                  >[service-module_details]
+                </small>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
