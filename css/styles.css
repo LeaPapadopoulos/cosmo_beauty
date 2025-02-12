@@ -756,25 +756,49 @@ section h3 {
 
 /* About Section Styles */
 .about-section {
-  padding: 100px 0;
-  background: linear-gradient(to bottom right, #fff, #f8fafc);
+  background: linear-gradient(135deg, #fff, #f8fafc);
+  padding: 120px 0 100px;
+  position: relative;
   overflow: hidden;
 }
 
+/* Add the same gradient overlay as hero section */
+.about-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    rgba(66, 153, 225, 0.05),
+    rgba(236, 201, 75, 0.05)
+  );
+  z-index: 0;
+}
+
+/* Ensure content stays above the gradient */
+.about-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Add the same diagonal shape divider */
+.about-section::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(to bottom right, transparent 49%, #fff 50%);
+}
+
+/* Keep existing about section styles */
 .about-section h2 {
   position: relative;
   margin-bottom: 2rem;
-}
-
-.about-section h2::after {
-  content: "";
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  width: 60px;
-  height: 3px;
-  background: linear-gradient(to right, #4299e1, #63b3ed);
-  transform: translateX(-50%);
 }
 
 .about-image {
@@ -834,7 +858,7 @@ section h3 {
 /* Mobile Optimization */
 @media (max-width: 768px) {
   .about-section {
-    padding: 60px 0;
+    padding: 80px 0 60px;
   }
 
   .about-image {
@@ -845,10 +869,6 @@ section h3 {
   .about-content {
     text-align: center;
     transform: translateX(0);
-  }
-
-  .feature-item {
-    justify-content: center;
   }
 }
 
