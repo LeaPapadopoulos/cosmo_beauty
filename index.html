@@ -10,212 +10,54 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <!-- Google Font (Montserrat) -->
+    <!-- Google Font (Montserrat) - Fix the URL encoding -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&amp;display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap"
       rel="stylesheet"
     />
     <!-- Custom Styles -->
-    <style>
-      body {
-        font-family: "Montserrat", sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f0f0f0;
-        color: #333;
+    <link rel="stylesheet" href="css/styles.css" />
+    <meta
+      name="description"
+      content="Your beauty and wellness sanctuary in Ratingen. Professional beauty services including facials, massages, and nail care."
+    />
+    <meta
+      name="keywords"
+      content="beauty salon, spa, wellness, Ratingen, facial treatments, massage"
+    />
+    <meta property="og:title" content="Wellness Cosmo Beauty" />
+    <meta
+      property="og:description"
+      content="Your beauty and wellness sanctuary in Ratingen"
+    />
+    <meta property="og:image" content="images/IMG_6305.JPG" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BeautySalon",
+        "name": "Wellness Cosmo Beauty",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "An d. Schmeilt 14",
+          "addressLocality": "Ratingen",
+          "postalCode": "40885",
+          "addressCountry": "DE"
+        },
+        "telephone": "+4915129043024"
       }
-
-      nav {
-        background-color: white;
-        border-bottom: 1px solid #e0e0e0;
-      }
-
-      nav .navbar-brand,
-      nav .nav-link {
-        color: #333;
-      }
-
-      nav .nav-link:hover {
-        color: #6c757d;
-      }
-
-      header {
-        background-color: white;
-        color: #333;
-        text-align: center;
-        padding: 100px 0;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      }
-
-      header h1 {
-        font-size: 2.5rem;
-        font-weight: 600;
-        color: #333;
-      }
-
-      section {
-        padding: 60px 0;
-        background-color: #f0f0f0;
-      }
-
-      section.bg-white {
-        background-color: white;
-      }
-
-      .services .card {
-        border: none;
-        background-color: white;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      }
-
-      .services .card:hover {
-        transform: scale(1.05);
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-      }
-
-      .card-title {
-        font-weight: 600;
-        color: #333;
-      }
-
-      footer {
-        background-color: white;
-        color: #333;
-        text-align: center;
-        padding: 20px 0;
-        border-top: 1px solid #e0e0e0;
-      }
-
-      a.btn-light {
-        background-color: #f0f0f0;
-        border-color: #f0f0f0;
-        color: #333;
-        transition: background-color 0.3s;
-      }
-
-      a.btn-light:hover {
-        background-color: #d6d6d6;
-        color: #333;
-      }
-
-      .navbar-light.bg-light {
-        background-color: #e6e6e8 !important;
-      }
-      .navbar {
-        padding-top: 0 !important; /* Remove top padding */
-        padding-bottom: 0 !important; /* Remove bottom padding */
-      }
-
-      .nav-link.btn-primary {
-        background-color: black !important;
-        border-color: black !important;
-      }
-
-      .nav-link.btn-primary:hover {
-        background-color: #333 !important;
-        border-color: #333 !important;
-      }
-
-      .price-list-container {
-        border-radius: 8px;
-        overflow: hidden;
-        background: white;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-        margin-bottom: 2rem;
-        padding-left: 0;
-        padding-right: 0; /* Remove Bootstrap's default gutters */
-      }
-
-      .price-list-header {
-        background-color: #f8f9fa;
-        padding: 15px;
-        margin: 0;
-        border-bottom: 1px solid #e9ecef;
-      }
-
-      .price-list-header.row {
-        margin-left: 0; /* Remove default row margin */
-        margin-right: 0; /* Remove default row margin */
-      }
-
-      .price-list-item {
-        padding: 15px;
-        margin: 0;
-        border-bottom: 1px solid #e9ecef;
-        transition: background-color 0.2s ease;
-      }
-
-      .price-list-item.row {
-        margin-left: 0; /* Remove default row margin */
-        margin-right: 0; /* Remove default row margin */
-      }
-
-      .price-list-container .row {
-        --bs-gutter-x: 0;
-      }
-
-      .price-list-header .col-8,
-      .price-list-header .col-2,
-      .price-list-item .col-8,
-      .price-list-item .col-2 {
-        padding-left: 15px;
-        padding-right: 15px;
-      }
-
-      .price-list-item:last-child {
-        border-bottom: none;
-      }
-
-      .price-list-item:hover {
-        background-color: #f8f9fa;
-      }
-
-      h3 {
-        margin-bottom: 1.5rem; /* Consistent spacing below headers */
-      }
-
-      #pricelist h3:first-of-type {
-        margin-top: 0; /* Remove top margin from first h3 */
-      }
-
-      #pricelist .price-list-container:last-of-type {
-        margin-bottom: 0;
-        padding-left: 0;
-        padding-right: 0; /* Remove bottom margin from last container */
-      }
-
-      .price-list-item small {
-        display: block;
-        margin-top: 4px;
-      }
-
-      .price-list-item .btn-link {
-        color: #333;
-        font-size: 0.875rem;
-      }
-
-      .price-list-item .btn-link:hover {
-        color: #000;
-      }
-
-      .price-list-item .collapse p {
-        padding-left: 15px;
-        padding-right: 15px;
-      }
-
-      .collapse-arrow {
-        transition: transform 0.2s ease;
-      }
-
-      [aria-expanded="true"] .collapse-arrow {
-        transform: rotate(180deg);
-      }
-    </style>
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"
+    />
   </head>
   <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-light"
+      role="navigation"
+      aria-label="Main navigation"
+    >
       <div class="container">
         <a class="navbar-brand" href="#">
           <img
@@ -266,12 +108,35 @@
     </nav>
 
     <!-- Hero Section -->
-    <header class="bg-light">
+    <header class="hero-section">
       <div class="container">
-        <h1>Relax, Refresh, Renew</h1>
-        <p>Your beauty and wellness sanctuary</p>
-        <a href="#services" class="btn btn-light">Our Services</a>
+        <div class="row align-items-center">
+          <div class="col-lg-6 hero-content">
+            <h1 class="display-4 fw-bold mb-4">Relax, Refresh, Renew</h1>
+            <p class="lead mb-4">Your beauty and wellness sanctuary in Ratingen. Experience professional care and relaxation in our modern studio.</p>
+            <div class="hero-buttons">
+              <a href="#services" class="btn btn-primary btn-lg me-3 mb-2 mb-md-0">
+                Our Services
+                <i class="bi bi-arrow-right ms-2"></i>
+              </a>
+              <a href="https://www.planity.com/de-DE/wellness-cosmo-beauty-40885-ratingen" 
+                 target="_blank" 
+                 class="btn btn-outline-primary btn-lg">
+                Book Now
+                <i class="bi bi-calendar-check ms-2"></i>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-6 hero-image">
+            <img 
+              src="images/IMG_4405.jpeg" 
+              alt="Beauty Studio Welcome" 
+              class="img-fluid rounded-3 shadow-lg"
+            />
+          </div>
+        </div>
       </div>
+      <div class="hero-shape"></div>
     </header>
     <hr style="padding: 0; margin: 0; opacity: 0.1" />
 
@@ -380,1634 +245,1395 @@
     <section id="pricelist" class="bg-white">
       <div class="container">
         <h2 class="text-center">Wellness Cosmo Beauty Price List</h2>
-        <div class="row mt-4">
-          <!-- REVITALISIEREND Section -->
-          <h3>REVITALISIEREND</h3>
-          <div class="price-list-container">
-            <!-- Price list header -->
-            <div class="price-list-header row">
-              <div class="col-8"><strong>Service</strong></div>
-              <div class="col-2 text-center"><strong>Duration</strong></div>
-              <div class="col-2 text-center"><strong>Price</strong></div>
-            </div>
 
-            <!-- Individual items -->
-            <div class="price-list-item row">
-              <!-- Hydra Infusion -->
-              <div class="col-8">
-                <div>HYDRA INFUSION</div>
-                <small class="text-muted"
-                  >Diese intensiv feuchtigkeitsspendende Behandlung optimiert
-                  den natürlichen</small
+        <!-- Tabs Navigation -->
+        <ul
+          class="nav nav-tabs price-tabs justify-content-center mb-4"
+          role="tablist"
+        >
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link active"
+              data-bs-toggle="tab"
+              data-bs-target="#revitalisierend"
+              type="button"
+              role="tab"
+            >
+            REVITALISIEREND
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              data-bs-toggle="tab"
+              data-bs-target="#antiaging"
+              type="button"
+              role="tab"
+            >
+            TIEFENREINIGEND            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              data-bs-toggle="tab"
+              data-bs-target="#beruhigend"
+              type="button"
+              role="tab"
+            >
+            BERUHIGEND
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+          </li>
+            <button
+              class="nav-link"
+              data-bs-toggle="tab"
+              data-bs-target="#greenpeel"
+              type="button"
+              role="tab"
+            >
+            GREEN PEEL®
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+          </li>
+            <button
+              class="nav-link"
+              data-bs-toggle="tab"
+              data-bs-target="#gesicht"
+              type="button"
+              role="tab"
+            >
+            GESICHT
+            </button>
+          </li>
+          <li class="nav-item" role="presentation"></li>
+          </li>
+            <button
+              class="nav-link"
+              data-bs-toggle="tab"
+              data-bs-target="#augen"
+              type="button"
+              role="tab"
+            >
+            AUGEN
+            </button>
+          </li>
+          <li class="nav-item" role="presentation"></li>
+          </li>
+            <button
+              class="nav-link"
+              data-bs-toggle="tab"
+              data-bs-target="#koerper"
+              type="button"
+              role="tab"
+            >
+            KÖRPER
+            </button>
+          </li>
+          <li class="nav-item" role="presentation"></li>
+          </li>
+            <button
+              class="nav-link"
+              data-bs-toggle="tab"
+              data-bs-target="#glowhydra"
+              type="button"
+              role="tab"
+            >
+            GLOW HYDRA
+            </button>
+          </li>
+        </ul>
+
+        <!-- Tabs Content -->
+        <div class="tab-content">
+          <!-- REVITALISIEREND Tab -->
+          <div
+            class="tab-pane fade show active"
+            id="revitalisierend"
+            role="tabpanel"
+          >
+            <div class="price-list-container">
+              <!-- Price list header -->
+              <div class="price-list-header row">
+                <div class="col-8"><strong>Service</strong></div>
+                <div class="col-2 text-center"><strong>Duration</strong></div>
+                <div class="col-2 text-center"><strong>Price</strong></div>
+              </div>
+
+              <!-- Individual items -->
+              <div class="price-list-item row">
+                <!-- Hydra Infusion -->
+                <div class="col-8">
+                  <div>HYDRA INFUSION</div>
+                  <small class="text-muted"
+                    >Diese intensiv feuchtigkeitsspendende Behandlung optimiert
+                    den natürlichen</small
+                  >
+                  <div class="mt-2">
+                    <button
+                      class="btn btn-link p-0 text-decoration-none d-flex align-items-center"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#hydraInfusion"
+                      aria-expanded="false"
+                      aria-controls="hydraInfusion"
+                    >
+                      More Info
+                      <svg
+                        class="ms-1 collapse-arrow"
+                        width="12"
+                        height="12"
+                        viewBox="0 0 16 16"
+                        fill="currentColor"
+                      >
+                        <path
+                          d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="col-2 d-flex align-items-center justify-content-center"
                 >
-                <div class="mt-2">
-                  <button
-                    class="btn btn-link p-0 text-decoration-none d-flex align-items-center"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#hydraInfusion"
-                    aria-expanded="false"
-                    aria-controls="hydraInfusion"
-                  >
-                    More Info
-                    <svg
-                      class="ms-1 collapse-arrow"
-                      width="12"
-                      height="12"
-                      viewBox="0 0 16 16"
-                      fill="currentColor"
-                    >
-                      <path
-                        d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
-                      />
-                    </svg>
-                  </button>
+                  60 min
                 </div>
-              </div>
-              <div
-                class="col-2 d-flex align-items-center justify-content-center"
-              >
-                60 min
-              </div>
-              <div
-                class="col-2 d-flex align-items-center justify-content-center"
-              >
-                70€
-              </div>
-              <div class="collapse mt-2 col-12" id="hydraInfusion">
-                <small class="mb-0 px-3 text-muted"
-                  >Diese intensiv feuchtigkeitsspendende Behandlung optimiert
-                  den natürlichen Feuchtigkeitsgehalt der Haut und sorgt für
-                  eine langanhaltende Hydration. Durch die Anwendung speziell
-                  ausgewählter Wirkstoffe wird die Hautstruktur verbessert und
-                  die Haut erhält ein frisches, pralles Aussehen. Ein
-                  integrativer Bestandteil dieser Behandlung ist eine gezielte
-                  Gesichtsmassage, die die Mikrozirkulation anregt, den
-                  Lymphfluss fördert und die Haut aufnahmefähiger für die
-                  pflegenden Inhaltsstoffe macht. Das Ergebnis ist eine sichtbar
-                  erfrischte, elastische und tief genährte Haut.</small
+                <div
+                  class="col-2 d-flex align-items-center justify-content-center"
                 >
-              </div>
-            </div>
-
-            <!-- # This is one row -->
-            <div class="price-list-item row">
-              <div class="col-8">
-                <div>HYDRA INFUSION SONO</div>
-                <small class="text-muted"
-                  >Diese fortschrittliche Feuchtigkeitsbehandlung kombiniert
-                  intensive Hydratation mit der
-                </small>
-                <div class="mt-2">
-                  <button
-                    class="btn btn-link p-0 text-decoration-none d-flex align-items-center"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#hydraInfusionSono"
-                    aria-expanded="false"
-                    aria-controls="hydraInfusionSono"
+                  70€
+                </div>
+                <div class="collapse mt-2 col-12" id="hydraInfusion">
+                  <small class="mb-0 px-3 text-muted"
+                    >Diese intensiv feuchtigkeitsspendende Behandlung optimiert
+                    den natürlichen Feuchtigkeitsgehalt der Haut und sorgt für
+                    eine langanhaltende Hydration. Durch die Anwendung speziell
+                    ausgewählter Wirkstoffe wird die Hautstruktur verbessert und
+                    die Haut erhält ein frisches, pralles Aussehen. Ein
+                    integrativer Bestandteil dieser Behandlung ist eine gezielte
+                    Gesichtsmassage, die die Mikrozirkulation anregt, den
+                    Lymphfluss fördert und die Haut aufnahmefähiger für die
+                    pflegenden Inhaltsstoffe macht. Das Ergebnis ist eine
+                    sichtbar erfrischte, elastische und tief genährte
+                    Haut.</small
                   >
-                    More Info
-                    <svg
-                      class="ms-1 collapse-arrow"
-                      width="12"
-                      height="12"
-                      viewBox="0 0 16 16"
-                      fill="currentColor"
-                    >
-                      <path
-                        d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
-                      />
-                    </svg>
-                  </button>
                 </div>
               </div>
-              <div
-                class="col-2 d-flex align-items-center justify-content-center"
-              >
-                75 min
-              </div>
-              <div
-                class="col-2 d-flex align-items-center justify-content-center"
-              >
-                90€
-              </div>
-              <div class="collapse mt-2 col-12" id="hydraInfusionSono">
-                <small class="mb-0 px-3 text-muted"
-                  >Diese fortschrittliche Feuchtigkeitsbehandlung kombiniert
-                  intensive Hydratation mit der modernen Ultraschalltechnologie.
-                  Der Ultraschall ermöglicht das tiefenwirksame Einschleusen
-                  feuchtigkeitsspendender Inhaltsstoffe und fördert gleichzeitig
-                  die Zellregeneration. Die Haut wird sichtbar straffer und
-                  elastischer, was einen natürlichen Lifting-Effekt erzielt.
-                  Eine entspannende Gesichtsmassage steigert die Durchblutung
-                  und den Lymphfluss, wodurch die Haut optimal auf die
-                  pflegenden Substanzen vorbereitet wird. Das Ergebnis ist eine
-                  revitalisierte, pralle und intensiv hydratisierte Haut, die
-                  sich glatter und frischer anfühlt.
-                </small>
-              </div>
-            </div>
-            <!-- # This is one row -->
-            <div class="price-list-item row">
-              <div class="col-8">
-                <div>BIODROGA BIOSCIENCE GOLDBEHANDLUNG</div>
-                <small class="text-muted"
-                  >Mit 24karätigen Goldblättchen und Kaviar-Extrakt wird die
-                  Haut intensiv gepflegt und
-                </small>
-                <div class="mt-2">
-                  <button
-                    class="btn btn-link p-0 text-decoration-none d-flex align-items-center"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#biodrogaBioschienceGold"
-                    aria-expanded="false"
-                    aria-controls="biodrogaBioschienceGold"
-                  >
-                    More Info
-                    <svg
-                      class="ms-1 collapse-arrow"
-                      width="12"
-                      height="12"
-                      viewBox="0 0 16 16"
-                      fill="currentColor"
-                    >
-                      <path
-                        d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
-                      />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-              <div
-                class="col-2 d-flex align-items-center justify-content-center"
-              >
-                60 min
-              </div>
-              <div
-                class="col-2 d-flex align-items-center justify-content-center"
-              >
-                105€
-              </div>
-              <div class="collapse mt-2 col-12" id="biodrogaBioschienceGold">
-                <small class="mb-0 px-3 text-muted"
-                  >Mit 24karätigen Goldblättchen und Kaviar-Extrakt wird die
-                  Haut intensiv gepflegt und gewinnt an Vitalität und
-                  Strahlkraft. Neben der Minimierung von Linien und Falten wird
-                  die Elastizität der Haut verbessert.Inkl. Face & Dekollete
-                  Sculpting Massage
-                </small>
-              </div>
-            </div>
-            <!-- # This is one row -->
-            <div class="price-list-item row">
-              <div class="col-8">
-                <div>REJUVENATION</div>
-                <small class="text-muted"
-                  >Medizinische Anti-Aging-Behandlung
-                </small>
-              </div>
-              <div
-                class="col-2 d-flex align-items-center justify-content-center"
-              >
-                60 min
-              </div>
-              <div
-                class="col-2 d-flex align-items-center justify-content-center"
-              >
-                80€
-              </div>
-              <div
-                class="collapse mt-2 col-12"
-                id="biodrogaBioschienceGold"
-              ></div>
-            </div>
 
-            <!-- # This is one row -->
-            <div class="price-list-item row">
-              <div class="col-8">
-                <div>REJUVENATION SONO</div>
-                <small class="text-muted"
-                  >Diese fortschrittliche medizinische Anti-Aging-Behandlung
-                  kombiniert hochwirksame
-                </small>
-                <div class="mt-2">
-                  <button
-                    class="btn btn-link p-0 text-decoration-none d-flex align-items-center"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#rejuvenationSono"
-                    aria-expanded="false"
-                    aria-controls="rejuvenationSono"
-                  >
-                    More Info
-                    <svg
-                      class="ms-1 collapse-arrow"
-                      width="12"
-                      height="12"
-                      viewBox="0 0 16 16"
-                      fill="currentColor"
+              <!-- # This is one row -->
+              <div class="price-list-item row">
+                <div class="col-8">
+                  <div>HYDRA INFUSION SONO</div>
+                  <small class="text-muted"
+                    >Diese fortschrittliche Feuchtigkeitsbehandlung kombiniert
+                    intensive Hydratation mit der
+                  </small>
+                  <div class="mt-2">
+                    <button
+                      class="btn btn-link p-0 text-decoration-none d-flex align-items-center"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#hydraInfusionSono"
+                      aria-expanded="false"
+                      aria-controls="hydraInfusionSono"
                     >
-                      <path
-                        d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
-                      />
-                    </svg>
-                  </button>
+                      More Info
+                      <svg
+                        class="ms-1 collapse-arrow"
+                        width="12"
+                        height="12"
+                        viewBox="0 0 16 16"
+                        fill="currentColor"
+                      >
+                        <path
+                          d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
+                        />
+                      </svg>
+                    </button>
+                  </div>
                 </div>
-              </div>
-              <div
-                class="col-2 d-flex align-items-center justify-content-center"
-              >
-                75 min
-              </div>
-              <div
-                class="col-2 d-flex align-items-center justify-content-center"
-              >
-                95€
-              </div>
-              <div class="collapse mt-2 col-12" id="rejuvenationSono">
-                <small class="mb-0 px-3 text-muted"
-                  >Diese fortschrittliche medizinische Anti-Aging-Behandlung
-                  kombiniert hochwirksame Wirkstoffe mit der
-                  Ultraschalltechnologie, um die sichtbaren Anzeichen der
-                  Hautalterung effektiv zu verlangsamen und zu korrigieren. Der
-                  Ultraschall verstärkt die Aufnahme der aktiven Inhaltsstoffe
-                  und fördert die tiefenwirksame Regeneration der Haut. Durch
-                  die Anregung der Kollagen- und Elastin Produktion wird die
-                  Hautstruktur nachhaltig gestärkt, feine Linien und Falten
-                  werden sichtbar reduziert. Die Haut erscheint straffer,
-                  elastischer und verjüngt. Ideal für die Behandlung der ersten
-                  Alterserscheinungen und zur Prävention weiterer
-                  Hautveränderungen.
-                </small>
-              </div>
-            </div>
-
-            <!-- # This is one row -->
-            <div class="price-list-item row">
-              <div class="col-8">
-                <div>HYALURONIC BOOST SONO</div>
-                <small class="text-muted"
-                  >Diese hochwirksame Behandlung nutzt die Kraft von
-                  Hyaluronsäure in Kombination mit
-                </small>
-                <div class="mt-2">
-                  <button
-                    class="btn btn-link p-0 text-decoration-none d-flex align-items-center"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#hyaluronicBoostSono"
-                    aria-expanded="false"
-                    aria-controls="hyaluronicBoostSono"
-                  >
-                    More Info
-                    <svg
-                      class="ms-1 collapse-arrow"
-                      width="12"
-                      height="12"
-                      viewBox="0 0 16 16"
-                      fill="currentColor"
-                    >
-                      <path
-                        d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
-                      />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-              <div
-                class="col-2 d-flex align-items-center justify-content-center"
-              >
-                40 min
-              </div>
-              <div
-                class="col-2 d-flex align-items-center justify-content-center"
-              >
-                50€
-              </div>
-              <div class="collapse mt-2 col-12" id="hyaluronicBoostSono">
-                <small class="mb-0 px-3 text-muted"
-                  >Diese hochwirksame Behandlung nutzt die Kraft von
-                  Hyaluronsäure in Kombination mit Ultraschalltechnologie, um
-                  der Haut sofort intensive Feuchtigkeit zu verleihen. Durch den
-                  Ultraschall wird die Hyaluronsäure tief in die Haut
-                  eingeschleust, was eine optimale Hydration gewährleistet und
-                  die Hautstruktur merklich verbessert. Die Haut erhält ein
-                  frisches, pralles Aussehen und fühlt sich sofort glatter und
-                  geschmeidiger an. Diese Express-Behandlung eignet sich ideal
-                  für eine schnelle Auffrischung der Haut vor besonderen
-                  Anlässen oder zur regelmäßigen Feuchtigkeitsversorgung, um
-                  Trockenheit und Dehydrierung zu vermeiden.
-                </small>
-              </div>
-            </div>
-          </div>
-
-          <!-- TIEFENREINIGEND Section -->
-          <h3>TIEFENREINIGEND</h3>
-          <div class="price-list-container">
-            <!-- Price list header -->
-            <div class="price-list-header row">
-              <div class="col-8"><strong>Service</strong></div>
-              <div class="col-2 text-center"><strong>Duration</strong></div>
-              <div class="col-2 text-center"><strong>Price</strong></div>
-            </div>
-
-            <!-- Individual items -->
-            <div class="price-list-item row">
-              <div class="col-8">
-                <div>CLEANSE & REFRESH</div>
-                <small class="text-muted"
-                  >Diese ganzheitliche Behandlung kombiniert Tiefenreinigung,
-                  sanfte Erneuerung und
-                </small>
-                <div class="mt-2">
-                  <button
-                    class="btn btn-link p-0 text-decoration-none d-flex align-items-center"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#cleanseRefresh"
-                    aria-expanded="false"
-                    aria-controls="cleanseRefresh"
-                  >
-                    More Info
-                    <svg
-                      class="ms-1 collapse-arrow"
-                      width="12"
-                      height="12"
-                      viewBox="0 0 16 16"
-                      fill="currentColor"
-                    >
-                      <path
-                        d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
-                      />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-              <div
-                class="col-2 d-flex align-items-center justify-content-center"
-              >
-                60 min
-              </div>
-              <div
-                class="col-2 d-flex align-items-center justify-content-center"
-              >
-                70€
-              </div>
-              <div class="collapse mt-2 col-12" id="cleanseRefresh">
-                <small class="mb-0 px-3 text-muted"
-                  >Diese ganzheitliche Behandlung kombiniert Tiefenreinigung,
-                  sanfte Erneuerung und intensive Pflege für ein klares,
-                  strahlendes Hautbild. Nach der gründlichen Reinigung und einem
-                  Peeling werden Unreinheiten gezielt entfernt. Eine
-                  stimulierende Massage fördert die Durchblutung und verbessert
-                  die Hautelastizität. Abschließend versorgt eine regenerierende
-                  Maske die Haut mit essenziellen Nährstoffen, beruhigt und
-                  schenkt neue Frische.</small
+                <div
+                  class="col-2 d-flex align-items-center justify-content-center"
                 >
-              </div>
-            </div>
-
-            <!-- # This is one row -->
-            <div class="price-list-item row">
-              <div class="col-8">
-                <div>CLEANSE & REFRESH SONO</div>
-                <small class="text-muted"
-                  >Diese ganzheitliche Behandlung kombiniert Tiefenreinigung,
-                  sanfte Erneuerung und
-                </small>
-                <div class="mt-2">
-                  <button
-                    class="btn btn-link p-0 text-decoration-none d-flex align-items-center"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#cleanseRefreshSono"
-                    aria-expanded="false"
-                    aria-controls="cleanseRefreshSono"
-                  >
-                    More Info
-                    <svg
-                      class="ms-1 collapse-arrow"
-                      width="12"
-                      height="12"
-                      viewBox="0 0 16 16"
-                      fill="currentColor"
-                    >
-                      <path
-                        d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
-                      />
-                    </svg>
-                  </button>
+                  75 min
                 </div>
-              </div>
-              <div
-                class="col-2 d-flex align-items-center justify-content-center"
-              >
-                75 min
-              </div>
-              <div
-                class="col-2 d-flex align-items-center justify-content-center"
-              >
-                85€
-              </div>
-              <div class="collapse mt-2 col-12" id="cleanseRefreshSono">
-                <small class="mb-0 px-3 text-muted"
-                  >Diese ganzheitliche Behandlung kombiniert Tiefenreinigung,
-                  sanfte Erneuerung und intensive Pflege für ein klares,
-                  strahlendes Hautbild. Nach der gründlichen Reinigung und einem
-                  Peeling werden Unreinheiten gezielt entfernt. Eine
-                  stimulierende Massage fördert die Durchblutung und verbessert
-                  die Hautelastizität. Abschließend versorgt eine regenerierende
-                  Maske die Haut mit essenziellen Nährstoffen, beruhigt und
-                  schenkt neue Frische. Der Ultraschall fördert die
-                  Tiefenaufnahme aktiver Wirkstoffe, verbessert die
-                  Zellregeneration und steigert die Hautelastizität.
-                </small>
-              </div>
-            </div>
-          </div>
-
-          <!-- BERUHIGEND Section -->
-          <h3>BERUHIGEND</h3>
-          <div class="price-list-container">
-            <!-- Price list header -->
-            <div class="price-list-header row">
-              <div class="col-8"><strong>Service</strong></div>
-              <div class="col-2 text-center"><strong>Duration</strong></div>
-              <div class="col-2 text-center"><strong>Price</strong></div>
-            </div>
-
-            <!-- Individual items -->
-            <div class="price-list-item row">
-              <div class="col-8">
-                <div>SOOTHING TOUCH</div>
-                <small class="text-muted"
-                  >Tiefenberuhigung und Schutz für zarte Haut</small
+                <div
+                  class="col-2 d-flex align-items-center justify-content-center"
                 >
-                <div class="mt-2">
-                  <button
-                    class="btn btn-link p-0 text-decoration-none d-flex align-items-center"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#soothingTouch"
-                    aria-expanded="false"
-                    aria-controls="soothingTouch"
-                  >
-                    More Info
-                    <svg
-                      class="ms-1 collapse-arrow"
-                      width="12"
-                      height="12"
-                      viewBox="0 0 16 16"
-                      fill="currentColor"
-                    >
-                      <path
-                        d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
-                      />
-                    </svg>
-                  </button>
+                  90€
+                </div>
+                <div class="collapse mt-2 col-12" id="hydraInfusionSono">
+                  <small class="mb-0 px-3 text-muted"
+                    >Diese fortschrittliche Feuchtigkeitsbehandlung kombiniert
+                    intensive Hydratation mit der modernen
+                    Ultraschalltechnologie. Der Ultraschall ermöglicht das
+                    tiefenwirksame Einschleusen feuchtigkeitsspendender
+                    Inhaltsstoffe und fördert gleichzeitig die Zellregeneration.
+                    Die Haut wird sichtbar straffer und elastischer, was einen
+                    natürlichen Lifting-Effekt erzielt. Eine entspannende
+                    Gesichtsmassage steigert die Durchblutung und den
+                    Lymphfluss, wodurch die Haut optimal auf die pflegenden
+                    Substanzen vorbereitet wird. Das Ergebnis ist eine
+                    revitalisierte, pralle und intensiv hydratisierte Haut, die
+                    sich glatter und frischer anfühlt.
+                  </small>
                 </div>
               </div>
-              <div
-                class="col-2 d-flex align-items-center justify-content-center"
-              >
-                60 min
-              </div>
-              <div
-                class="col-2 d-flex align-items-center justify-content-center"
-              >
-                75€
-              </div>
-              <div class="collapse mt-2 col-12" id="soothingTouch">
-                <small class="mb-0 px-3 text-muted"
-                  >Diese sanfte Behandlung wurde speziell für empfindliche,
-                  gereizte oder zu Rötungen neigende Haut entwickelt. Durch
-                  schonende Reinigung und reizlindernde Wirkstoffe wird die Haut
-                  reduzieren Rötungen, lindern Irritationen und spenden
-                  intensive Feuchtigkeit. Eine entspannende Massage und eine
-                  Maske runden die Behandlung ab und sorgen für ein angenehm
-                  entspanntes, ausgeglichenes Hautgefühl.
-                </small>
-              </div>
-            </div>
-
-            <!-- # This is one row -->
-            <div class="price-list-item row">
-              <div class="col-8">
-                <div>SOOTHING TOUCH SONO</div>
-                <small class="text-muted"
-                  >Diese speziell entwickelte Behandlung wirkt gezielt gegen
-                  Rötungen und Gefäßinstabilität
-                </small>
-                <div class="mt-2">
-                  <button
-                    class="btn btn-link p-0 text-decoration-none d-flex align-items-center"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#soothingTouchSono"
-                    aria-expanded="false"
-                    aria-controls="soothingTouchSono"
-                  >
-                    More Info
-                    <svg
-                      class="ms-1 collapse-arrow"
-                      width="12"
-                      height="12"
-                      viewBox="0 0 16 16"
-                      fill="currentColor"
+              <!-- # This is one row -->
+              <div class="price-list-item row">
+                <div class="col-8">
+                  <div>BIODROGA BIOSCIENCE GOLDBEHANDLUNG</div>
+                  <small class="text-muted"
+                    >Mit 24karätigen Goldblättchen und Kaviar-Extrakt wird die
+                    Haut intensiv gepflegt und
+                  </small>
+                  <div class="mt-2">
+                    <button
+                      class="btn btn-link p-0 text-decoration-none d-flex align-items-center"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#biodrogaBioschienceGold"
+                      aria-expanded="false"
+                      aria-controls="biodrogaBioschienceGold"
                     >
-                      <path
-                        d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
-                      />
-                    </svg>
-                  </button>
+                      More Info
+                      <svg
+                        class="ms-1 collapse-arrow"
+                        width="12"
+                        height="12"
+                        viewBox="0 0 16 16"
+                        fill="currentColor"
+                      >
+                        <path
+                          d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
+                        />
+                      </svg>
+                    </button>
+                  </div>
                 </div>
-              </div>
-              <div
-                class="col-2 d-flex align-items-center justify-content-center"
-              >
-                60 min
-              </div>
-              <div
-                class="col-2 d-flex align-items-center justify-content-center"
-              >
-                75€
-              </div>
-              <div class="collapse mt-2 col-12" id="soothingTouchSono">
-                <small class="mb-0 px-3 text-muted"
-                  >Diese speziell entwickelte Behandlung wirkt gezielt gegen
-                  Rötungen und Gefäßinstabilität bei Couperose und Rosazea.
-                  Beruhigende Wirkstoffe lindern Irritationen, stärken die
-                  Hautbarriere und reduzieren das Erscheinungsbild von Rötungen.
-                  Eine kühlende Maske und eine sanfte Massage fördern die
-                  Hautberuhigung, während entzündungshemmende Pflegeprodukte für
-                  ein ausgeglichenes, entspanntes Hautgefühl sorgen. Ideal für
-                  empfindliche Haut, die zu erweiterten Äderchen und Reizungen
-                  neigt.
-                </small>
-              </div>
-            </div>
-
-            <!-- # This is one row -->
-            <div class="price-list-item row">
-              <div class="col-8">
-                <div>ROSACEA / COUPEROSE RELIEF</div>
-                <small class="text-muted"
-                  >Diese speziell entwickelte Behandlung wirkt gezielt gegen
-                  Rötungen und Gefäßinstabilität
-                </small>
-                <div class="mt-2">
-                  <button
-                    class="btn btn-link p-0 text-decoration-none d-flex align-items-center"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#rosaceaCouperoseRelief"
-                    aria-expanded="false"
-                    aria-controls="rosaceaCouperoseRelief"
-                  >
-                    More Info
-                    <svg
-                      class="ms-1 collapse-arrow"
-                      width="12"
-                      height="12"
-                      viewBox="0 0 16 16"
-                      fill="currentColor"
-                    >
-                      <path
-                        d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
-                      />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-              <div
-                class="col-2 d-flex align-items-center justify-content-center"
-              >
-                60 min
-              </div>
-              <div
-                class="col-2 d-flex align-items-center justify-content-center"
-              >
-                75€
-              </div>
-              <div class="collapse mt-2 col-12" id="rosaceaCouperoseRelief">
-                <small class="mb-0 px-3 text-muted"
-                  >Diese speziell entwickelte Behandlung wirkt gezielt gegen
-                  Rötungen und Gefäßinstabilität bei Couperose und Rosazea.
-                  Beruhigende Wirkstoffe lindern Irritationen, stärken die
-                  Hautbarriere und reduzieren das Erscheinungsbild von Rötungen.
-                  Eine kühlende Maske und eine sanfte Massage fördern die
-                  Hautberuhigung, während entzündungshemmende Pflegeprodukte für
-                  ein ausgeglichenes, entspanntes Hautgefühl sorgen. Ideal für
-                  empfindliche Haut, die zu erweiterten Äderchen und Reizungen
-                  neigt.
-                </small>
-              </div>
-            </div>
-            <!-- # This is one row -->
-            <div class="price-list-item row">
-              <div class="col-8">
-                <div>ROSACEA / COUPEROSE RELIEF SONO</div>
-                <small class="text-muted"
-                  >Diese fortschrittliche Behandlung kombiniert sanfte Pflege
-                  mit der regenerierenden Kraft des
-                </small>
-                <div class="mt-2">
-                  <button
-                    class="btn btn-link p-0 text-decoration-none d-flex align-items-center"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#RosaceaCouperoseReliefSono"
-                    aria-expanded="false"
-                    aria-controls="RosaceaCouperoseReliefSono"
-                  >
-                    More Info
-                    <svg
-                      class="ms-1 collapse-arrow"
-                      width="12"
-                      height="12"
-                      viewBox="0 0 16 16"
-                      fill="currentColor"
-                    >
-                      <path
-                        d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
-                      />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-              <div
-                class="col-2 d-flex align-items-center justify-content-center"
-              >
-                75 min
-              </div>
-              <div
-                class="col-2 d-flex align-items-center justify-content-center"
-              >
-                90€
-              </div>
-              <div class="collapse mt-2 col-12" id="RosaceaCouperoseReliefSono">
-                <small class="mb-0 px-3 text-muted">
-                  Diese fortschrittliche Behandlung kombiniert sanfte Pflege mit
-                  der regenerierenden Kraft des Ultraschalls. Die hochfrequenten
-                  Schallwellen ermöglichen das tiefe Eindringen beruhigender
-                  Wirkstoffe in das Gewebe, stärken die Hautstruktur und fördern
-                  die Zellregeneration. Speziell abgestimmte Wirkstoffe
-                  reduzieren Rötungen, beruhigen empfindliche Haut und
-                  unterstützen die Gefäßstabilität. Eine kühlende Maske und eine
-                  schonende Massage sorgen für zusätzliche Entspannung und ein
-                  ausgeglichenes Hautbild. Perfekt für Haut mit Rosazea oder
-                  Couperose, die intensive Pflege und Stärkung benötigt.
-                </small>
-              </div>
-            </div>
-          </div>
-
-          <!-- GREEN PEEL® Section -->
-          <h3>GREEN PEEL®</h3>
-          <div class="price-list-container">
-            <!-- Price list header -->
-            <div class="price-list-header row">
-              <div class="col-8"><strong>Service</strong></div>
-              <div class="col-2 text-center"><strong>Duration</strong></div>
-              <div class="col-2 text-center"><strong>Price</strong></div>
-            </div>
-
-            <!-- Individual items -->
-            <div class="price-list-item row">
-              <div class="col-8">
-                <div>GREEN PEEL® Kräuterschälkur CLASSIC</div>
-                <small class="text-muted"
-                  >Durch die anregende Kräutermassage werden die obersten
-                  Schichten der Epidermis
-                </small>
-                <div class="mt-2">
-                  <button
-                    class="btn btn-link p-0 text-decoration-none d-flex align-items-center"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#greenPeelKrauter"
-                    aria-expanded="false"
-                    aria-controls="greenPeelKrauter"
-                  >
-                    More Info
-                    <svg
-                      class="ms-1 collapse-arrow"
-                      width="12"
-                      height="12"
-                      viewBox="0 0 16 16"
-                      fill="currentColor"
-                    >
-                      <path
-                        d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
-                      />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-              <div
-                class="col-2 d-flex align-items-center justify-content-center"
-              >
-                60 min
-              </div>
-              <div
-                class="col-2 d-flex align-items-center justify-content-center"
-              >
-                195€
-              </div>
-              <div class="collapse mt-2 col-12" id="greenPeelKrauter">
-                <small class="mb-0 px-3 text-muted"
-                  >Durch die anregende Kräutermassage werden die obersten
-                  Schichten der Epidermis abgetragen, die Durchblutung, die
-                  Sauerstoffversorgung sowie der Hautstoffwechsel gesteigert und
-                  die Regenerationsprozesse der Haut werden angeregt. So wird
-                  die übliche Zeit der Hauterneuerung von 28 auf 5 Tage
-                  verkürzt. Nach dem Schälprozess erscheint eine neue, frische
-                  Haut. Bei der abschließenden Beauty Finish Behandlung wird die
-                  dann besonders aufnahmefähige Haut Diese Behandlungsvariante
-                  wird angewendet bei: Sonnengeschädigter Haut & Falten (zur
-                  Anti-Aging Prophylaxe) Erschlaffte Körperhaut (Bauchdecke,
-                  Oberarme, Oberschenkel) Einigen Formen von
-                  Hyperpigmentierungen Unreiner Haut, Talgzysten Narben &
-                  Dehnungsstreifen (Striae) Zu vorzeitiger Faltenbildung
-                  neigender Haut Kräuterschälkur inkl. Homecare-Set für
-                  intensive Hauterneuerung.
-                </small>
-              </div>
-            </div>
-
-            <!-- # This is one row -->
-            <div class="price-list-item row">
-              <div class="col-8">
-                <div>GREEN PEEL® Energy</div>
-                <small class="text-muted"
-                  >Die Energy Behandlung regt die Durchblutung, die
-                  Sauerstoffversorgung sowie den
-                </small>
-                <div class="mt-2">
-                  <button
-                    class="btn btn-link p-0 text-decoration-none d-flex align-items-center"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#GreenPeelEnergy"
-                    aria-expanded="false"
-                    aria-controls="GreenPeelEnergy"
-                  >
-                    More Info
-                    <svg
-                      class="ms-1 collapse-arrow"
-                      width="12"
-                      height="12"
-                      viewBox="0 0 16 16"
-                      fill="currentColor"
-                    >
-                      <path
-                        d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
-                      />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-              <div
-                class="col-2 d-flex align-items-center justify-content-center"
-              >
-                60 min
-              </div>
-              <div
-                class="col-2 d-flex align-items-center justify-content-center"
-              >
-                125€
-              </div>
-              <div class="collapse mt-2 col-12" id="GreenPeelEnergy">
-                <small class="mb-0 px-3 text-muted"
-                  >Die Energy Behandlung regt die Durchblutung, die
-                  Sauerstoffversorgung sowie den Stoffwechsel der Zellen an und
-                  führt zu einer natürlichen Verbesserung des Hautbildes ohne
-                  Schälprozess. Die Haut erhält spürbar mehr Energie,
-                  altersbedingte Hauterscheinungen werden gemildert. Diese
-                  Behandlungsvariante wird angewendet bei: Falten &
-                  Anti-Aging-Pophylaxe Unreinheiten Pigmentstörungen Als
-                  Körperbehandlung wird GREEN PEEL® Energy z.B. angewendet bei:
-                  Dehnungsstreifen & Cellulite Reibeisenhaut Elastizitätsverlust
-                </small>
-              </div>
-            </div>
-
-            <!-- GREEN PEEL® Fresh Up Section -->
-            <div class="price-list-item row">
-              <div class="col-8">
-                <div>GREEN PEEL® Fresh Up</div>
-                <small class="text-muted"
-                  >Mit dieser sanften Variante wird die Haut nicht geschält,
-                  sondern mit natürlichen
-                </small>
-                <div class="mt-2">
-                  <button
-                    class="btn btn-link p-0 text-decoration-none d-flex align-items-center"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#greenPeelFreshUp"
-                    aria-expanded="false"
-                    aria-controls="greenPeelFreshUp"
-                  >
-                    More Info
-                    <svg
-                      class="ms-1 collapse-arrow"
-                      width="12"
-                      height="12"
-                      viewBox="0 0 16 16"
-                      fill="currentColor"
-                    >
-                      <path
-                        d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
-                      />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-              <div
-                class="col-2 d-flex align-items-center justify-content-center"
-              >
-                60 min
-              </div>
-              <div
-                class="col-2 d-flex align-items-center justify-content-center"
-              >
-                95€
-              </div>
-              <div class="collapse mt-2 col-12" id="greenPeelFreshUp">
-                <small class="mb-0 px-3 text-muted"
-                  >Mit dieser sanften Variante wird die Haut nicht geschält,
-                  sondern mit natürlichen Kräutern angeregt und erfrischt. Die
-                  Durchblutung wird stimuliert, die Poren öffnen sich und die
-                  Haut ist nun in der Lage, die Wirkstoffe der anschließenden
-                  Pflege optimal aufzunehmen. Der Teint erscheint rosig, wirkt
-                  erholter und frischer. Diese Behandlungsvariante wird
-                  angewendet bei: Müde wirkender Haut of Ersten Zeichen der
-                  Hautalterung Fahlem Teint Verstärkter Verhornung
-                </small>
-              </div>
-            </div>
-          </div>
-
-          <!-- GESICHT Section -->
-          <h3>GESICHT</h3>
-          <div class="price-list-container">
-            <!-- Price list header -->
-            <div class="price-list-header row">
-              <div class="col-8"><strong>Service</strong></div>
-              <div class="col-2 text-center"><strong>Duration</strong></div>
-              <div class="col-2 text-center"><strong>Price</strong></div>
-            </div>
-
-            <!-- Individual items -->
-            <div class="price-list-item row">
-              <div class="col-8">
-                <div>MICRONEEDLING</div>
-                <small class="text-muted"
-                  >Hautverjüngung durch Kollagenstimulation.
-                </small>
-                <div class="mt-2">
-                  <button
-                    class="btn btn-link p-0 text-decoration-none d-flex align-items-center"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#skinConsultationDetails"
-                    aria-expanded="false"
-                    aria-controls="skinConsultationDetails"
-                  >
-                    More Info
-                    <svg
-                      class="ms-1 collapse-arrow"
-                      width="12"
-                      height="12"
-                      viewBox="0 0 16 16"
-                      fill="currentColor"
-                    >
-                      <path
-                        d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
-                      />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-              <div
-                class="col-2 d-flex align-items-center justify-content-center"
-              >
-                60 min
-              </div>
-              <div
-                class="col-2 d-flex align-items-center justify-content-center"
-              >
-                105€
-              </div>
-              <div class="collapse mt-2 col-12" id="skinConsultationDetails">
-                <small class="mb-0 px-3 text-muted"
-                  >Eine Behandlung mit individuell für jeden Kunden ausgewählter
-                  steriler Kapsel, basierend auf Hauttyp und Hautproblemen.
-                  Fördert die Hautregeneration und verbessert die Hautstruktur.
-                </small>
-              </div>
-            </div>
-
-            <!-- # This is one row -->
-            <div class="price-list-item row">
-              <div class="col-8">
-                <div>MICRONEEDLING GESICHT & DEKOLLETE</div>
-                <small class="text-muted"
-                  >Intensives Microneedling für Gesicht und Dekolleté.
-                </small>
-              </div>
-              <div
-                class="col-2 d-flex align-items-center justify-content-center"
-              >
-                75 min
-              </div>
-              <div
-                class="col-2 d-flex align-items-center justify-content-center"
-              >
-                135€
-              </div>
-            </div>
-
-            <!-- # This is one row -->
-            <div class="price-list-item row">
-              <div class="col-8">
-                <div>SÄUREBEHANDLUNG</div>
-                <small class="text-muted"
-                  >Chemisches Peeling für verschiedene Hautprobleme.
-                </small>
-                <div class="mt-2">
-                  <button
-                    class="btn btn-link p-0 text-decoration-none d-flex align-items-center"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#saurebehandlung"
-                    aria-expanded="false"
-                    aria-controls="saurebehandlung"
-                  >
-                    More Info
-                    <svg
-                      class="ms-1 collapse-arrow"
-                      width="12"
-                      height="12"
-                      viewBox="0 0 16 16"
-                      fill="currentColor"
-                    >
-                      <path
-                        d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
-                      />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-              <div
-                class="col-2 d-flex align-items-center justify-content-center"
-              >
-                60 min
-              </div>
-              <div
-                class="col-2 d-flex align-items-center justify-content-center"
-              >
-                85€
-              </div>
-              <div class="collapse mt-2 col-12" id="saurebehandlung">
-                <small class="mb-0 px-3 text-muted"
-                  >Diese gezielte Behandlung verwendet hochwertige Fruchtsäuren,
-                  um abgestorbene Hautzellen sanft zu entfernen, die
-                  Zellerneuerung anzuregen und die Hautstruktur zu verfeinern.
-                  Sie hilft bei der Behandlung von Unreinheiten,
-                  Hyperpigmentierung, feinen Linien und vergrößerten Poren.
-                  Ideal für alle Hauttypen, um einen klareren, strahlenden Teint
-                  zu erzielen.
-                </small>
-              </div>
-            </div>
-
-            <!-- # This is one row -->
-            <div class="price-list-item row">
-              <div class="col-8">
-                <div>KOSMETISCHE ZAHNAUFHELLUNG</div>
-                <small class="text-muted"
-                  >Professionelles Bleaching für strahlendere Zähne.
-                </small>
-                <div class="mt-2">
-                  <button
-                    class="btn btn-link p-0 text-decoration-none d-flex align-items-center"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#KosmetischeZahn"
-                    aria-expanded="false"
-                    aria-controls="KosmetischeZahn"
-                  >
-                    More Info
-                    <svg
-                      class="ms-1 collapse-arrow"
-                      width="12"
-                      height="12"
-                      viewBox="0 0 16 16"
-                      fill="currentColor"
-                    >
-                      <path
-                        d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
-                      />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-              <div
-                class="col-2 d-flex align-items-center justify-content-center"
-              >
-                60 min
-              </div>
-              <div
-                class="col-2 d-flex align-items-center justify-content-center"
-              >
-                80€
-              </div>
-              <div class="collapse mt-2 col-12" id="KosmetischeZahn">
-                <small class="mb-0 px-3 text-muted"
-                  >Es wird empfohlen, zwei Behandlungen im Abstand von einer
-                  Woche durchzuführen. Zur Erhaltung des Ergebnisses wird eine
-                  Auffrischung alle 3-4 Monate, je nach Zahnstruktur, empfohlen.
-                </small>
-              </div>
-            </div>
-
-            <!-- # This is one row -->
-            <div class="price-list-item row">
-              <div class="col-8">
-                <div>TEENAGER SKIN CARE U18</div>
-              </div>
-              <div
-                class="col-2 d-flex align-items-center justify-content-center"
-              >
-                50 min
-              </div>
-              <div
-                class="col-2 d-flex align-items-center justify-content-center"
-              >
-                45€
-              </div>
-            </div>
-          </div>
-
-          <!-- AUGEN Section -->
-          <h3>AUGEN</h3>
-          <div class="price-list-container">
-            <!-- Price list header -->
-            <div class="price-list-header row">
-              <div class="col-8"><strong>Service</strong></div>
-              <div class="col-2 text-center"><strong>Duration</strong></div>
-              <div class="col-2 text-center"><strong>Price</strong></div>
-            </div>
-
-            <!-- Individual items -->
-            <div class="price-list-item row">
-              <div class="col-8">
-                <div>IDEALE AUGENBRAUEN</div>
-                <small class="text-muted"
-                  >Formen, färben, zupfen und waxen für perfekte Augenbrauen.
-                </small>
-              </div>
-              <div
-                class="col-2 d-flex align-items-center justify-content-center"
-              >
-                30 min
-              </div>
-              <div
-                class="col-2 d-flex align-items-center justify-content-center"
-              >
-                35€
-              </div>
-            </div>
-
-            <!-- # This is one row -->
-            <div class="price-list-item row">
-              <div class="col-8">
-                <div>IDEALE WIMPERN</div>
-                <small class="text-muted"
-                  >Färben der Wimpern inkl. Augenpflege.
-                </small>
-              </div>
-              <div
-                class="col-2 d-flex align-items-center justify-content-center"
-              >
-                20 min
-              </div>
-              <div
-                class="col-2 d-flex align-items-center justify-content-center"
-              >
-                15€
-              </div>
-            </div>
-
-            <!-- # This is one row -->
-            <div class="price-list-item row">
-              <div class="col-8">
-                <div>STRAHLENDE AUGEN</div>
-                <small class="text-muted"
-                  >Augenbrauen + Wimpern: Färben, Formen, Zupfen, Waxen, Pflege
-                </small>
-              </div>
-              <div
-                class="col-2 d-flex align-items-center justify-content-center"
-              >
-                60 min
-              </div>
-              <div
-                class="col-2 d-flex align-items-center justify-content-center"
-              >
-                40€
-              </div>
-            </div>
-
-            <!-- # This is one row -->
-            <div class="price-list-item row">
-              <div class="col-8">
-                <div>LASHLIFTING</div>
-                <small class="text-muted"
-                  >Lang anhaltendes Wimpernlifting inklusive Färben und
-                  Keratinpflege
-                </small>
-                <div class="mt-2">
-                  <button
-                    class="btn btn-link p-0 text-decoration-none d-flex align-items-center"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#lashlifting"
-                    aria-expanded="false"
-                    aria-controls="lashlifting"
-                  >
-                    More Info
-                    <svg
-                      class="ms-1 collapse-arrow"
-                      width="12"
-                      height="12"
-                      viewBox="0 0 16 16"
-                      fill="currentColor"
-                    >
-                      <path
-                        d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
-                      />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-              <div
-                class="col-2 d-flex align-items-center justify-content-center"
-              >
-                60 min
-              </div>
-              <div
-                class="col-2 d-flex align-items-center justify-content-center"
-              >
-                60€
-              </div>
-              <div class="collapse mt-2 col-12" id="lashlifting">
-                <small class="mb-0 px-3 text-muted"
-                  >Lang anhaltendes Wimpernlifting inklusive Färben und
-                  Keratinpflege, der Effekt hält 6 bis 8 Wochen.
-                </small>
-              </div>
-            </div>
-
-            <!-- # This is one row -->
-            <div class="price-list-item row">
-              <div class="col-8">
-                <div>BROWLIFTING</div>
-                <small class="text-muted"
-                  >Augenbrauenlifting inkl. Formen, Färben und Pflege.
-                </small>
-              </div>
-              <div
-                class="col-2 d-flex align-items-center justify-content-center"
-              >
-                60 min
-              </div>
-              <div
-                class="col-2 d-flex align-items-center justify-content-center"
-              >
-                50€
-              </div>
-            </div>
-
-            <!-- # This is one row -->
-            <div class="price-list-item row">
-              <div class="col-8">
-                <div>LASH & BROW LIFTING</div>
-                <small class="text-muted"
-                  >Inklusive Färben und Keratinpflege
-                </small>
-              </div>
-              <div
-                class="col-2 d-flex align-items-center justify-content-center"
-              >
-                90 min
-              </div>
-              <div
-                class="col-2 d-flex align-items-center justify-content-center"
-              >
-                120€
-              </div>
-            </div>
-          </div>
-
-          <!-- KÖRPER Section -->
-          <h3>KÖRPER</h3>
-          <div class="price-list-container">
-            <!-- Price list header -->
-            <div class="price-list-header row">
-              <div class="col-8"><strong>Service</strong></div>
-              <div class="col-2 text-center"><strong>Duration</strong></div>
-              <div class="col-2 text-center"><strong>Price</strong></div>
-            </div>
-
-            <!-- Individual items -->
-            <div class="price-list-item row">
-              <div class="col-8">
-                <div>KÖRPERBALANCE MASSAGE</div>
-                <small class="text-muted"
-                  >Eine wohltuende Massage mit hochwertigen Bio-Aromaölen, die
-                  den Körper von</small
+                <div
+                  class="col-2 d-flex align-items-center justify-content-center"
                 >
-                <div class="mt-2">
-                  <button
-                    class="btn btn-link p-0 text-decoration-none d-flex align-items-center"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#korperbalanceMassage"
-                    aria-expanded="false"
-                    aria-controls="korperbalanceMassage"
-                  >
-                    More Info
-                    <svg
-                      class="ms-1 collapse-arrow"
-                      width="12"
-                      height="12"
-                      viewBox="0 0 16 16"
-                      fill="currentColor"
-                    >
-                      <path
-                        d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
-                      />
-                    </svg>
-                  </button>
+                  60 min
+                </div>
+                <div
+                  class="col-2 d-flex align-items-center justify-content-center"
+                >
+                  105€
+                </div>
+                <div class="collapse mt-2 col-12" id="biodrogaBioschienceGold">
+                  <small class="mb-0 px-3 text-muted"
+                    >Mit 24karätigen Goldblättchen und Kaviar-Extrakt wird die
+                    Haut intensiv gepflegt und gewinnt an Vitalität und
+                    Strahlkraft. Neben der Minimierung von Linien und Falten
+                    wird die Elastizität der Haut verbessert.Inkl. Face &
+                    Dekollete Sculpting Massage
+                  </small>
                 </div>
               </div>
-              <div
-                class="col-2 d-flex align-items-center justify-content-center"
-              >
-                60 min
+              <!-- # This is one row -->
+              <div class="price-list-item row">
+                <div class="col-8">
+                  <div>REJUVENATION</div>
+                  <small class="text-muted"
+                    >Medizinische Anti-Aging-Behandlung
+                  </small>
+                </div>
+                <div
+                  class="col-2 d-flex align-items-center justify-content-center"
+                >
+                  60 min
+                </div>
+                <div
+                  class="col-2 d-flex align-items-center justify-content-center"
+                >
+                  80€
+                </div>
+                <div
+                  class="collapse mt-2 col-12"
+                  id="biodrogaBioschienceGold"
+                ></div>
               </div>
-              <div
-                class="col-2 d-flex align-items-center justify-content-center"
-              >
-                80€
-              </div>
-              <div class="collapse mt-2 col-12" id="korperbalanceMassage">
-                <small class="mb-0 px-3 text-muted"
-                  >Eine wohltuende Massage mit hochwertigen Bio-Aromaölen, die
-                  den Körper von Spannungen befreit und Geist sowie Sinne in
-                  Einklang bringt. Perfekt für eine tiefe Regeneration und
-                  vollständige Entspannung.
-                </small>
-              </div>
-            </div>
 
-            <!-- # This is one row -->
-            <div class="price-list-item row">
-              <div class="col-8">
-                <div>HOLISTISCHE KÖRPERSTRAFFUNG</div>
-                <small class="text-muted"
-                  >Eine umfassende und hochwertige Behandlung zur Straffung und
-                  Revitalisierung Ihres
-                </small>
-                <div class="mt-2">
-                  <button
-                    class="btn btn-link p-0 text-decoration-none d-flex align-items-center"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#holistischeKorperstraffung"
-                    aria-expanded="false"
-                    aria-controls="holistischeKorperstraffung"
-                  >
-                    More Info
-                    <svg
-                      class="ms-1 collapse-arrow"
-                      width="12"
-                      height="12"
-                      viewBox="0 0 16 16"
-                      fill="currentColor"
+              <!-- # This is one row -->
+              <div class="price-list-item row">
+                <div class="col-8">
+                  <div>REJUVENATION SONO</div>
+                  <small class="text-muted"
+                    >Diese fortschrittliche medizinische Anti-Aging-Behandlung
+                    kombiniert hochwirksame
+                  </small>
+                  <div class="mt-2">
+                    <button
+                      class="btn btn-link p-0 text-decoration-none d-flex align-items-center"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#rejuvenationSono"
+                      aria-expanded="false"
+                      aria-controls="rejuvenationSono"
                     >
-                      <path
-                        d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
-                      />
-                    </svg>
-                  </button>
+                      More Info
+                      <svg
+                        class="ms-1 collapse-arrow"
+                        width="12"
+                        height="12"
+                        viewBox="0 0 16 16"
+                        fill="currentColor"
+                      >
+                        <path
+                          d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="col-2 d-flex align-items-center justify-content-center"
+                >
+                  75 min
+                </div>
+                <div
+                  class="col-2 d-flex align-items-center justify-content-center"
+                >
+                  95€
+                </div>
+                <div class="collapse mt-2 col-12" id="rejuvenationSono">
+                  <small class="mb-0 px-3 text-muted"
+                    >Diese fortschrittliche medizinische Anti-Aging-Behandlung
+                    kombiniert hochwirksame Wirkstoffe mit der
+                    Ultraschalltechnologie, um die sichtbaren Anzeichen der
+                    Hautalterung effektiv zu verlangsamen und zu korrigieren.
+                    Der Ultraschall verstärkt die Aufnahme der aktiven
+                    Inhaltsstoffe und fördert die tiefenwirksame Regeneration
+                    der Haut. Durch die Anregung der Kollagen- und Elastin
+                    Produktion wird die Hautstruktur nachhaltig gestärkt, feine
+                    Linien und Falten werden sichtbar reduziert. Die Haut
+                    erscheint straffer, elastischer und verjüngt. Ideal für die
+                    Behandlung der ersten Alterserscheinungen und zur Prävention
+                    weiterer Hautveränderungen.
+                  </small>
                 </div>
               </div>
-              <div
-                class="col-2 d-flex align-items-center justify-content-center"
-              >
-                90 min
-              </div>
-              <div
-                class="col-2 d-flex align-items-center justify-content-center"
-              >
-                105€
-              </div>
-              <div class="collapse mt-2 col-12" id="holistischeKorperstraffung">
-                <small class="mb-0 px-3 text-muted"
-                  >Eine umfassende und hochwertige Behandlung zur Straffung und
-                  Revitalisierung Ihres Körpers und Ihrer Haut. Die Kombination
-                  aus manuellem Massage, apparativem Vakuummassage, Peeling und
-                  intensiver Pflege sorgt für maximale Ergebnisse. Die Haut wird
-                  geglättet, intensiv durchfeuchtet und ihre Elastizität spürbar
-                  verbessert. Gleichzeitig werden Cellulite sichtbar reduziert,
-                  die Durchblutung und der Lymphfluss angeregt sowie
-                  Muskelverspannungen gelöst.
-                </small>
-              </div>
-            </div>
 
-            <!-- # This is one row -->
-            <div class="price-list-item row">
-              <div class="col-8">
-                <div>THERMISCHES BALANCE RITUAL</div>
-                <small class="text-muted"
-                  >Ein harmonisierendes Ritual, das die heilende Kraft der
-                  warmen Vulkansteine mit sanften
-                </small>
-                <div class="mt-2">
-                  <button
-                    class="btn btn-link p-0 text-decoration-none d-flex align-items-center"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#thermischesBalanceRitual"
-                    aria-expanded="false"
-                    aria-controls="thermischesBalanceRitual"
-                  >
-                    More Info
-                    <svg
-                      class="ms-1 collapse-arrow"
-                      width="12"
-                      height="12"
-                      viewBox="0 0 16 16"
-                      fill="currentColor"
+              <!-- # This is one row -->
+              <div class="price-list-item row">
+                <div class="col-8">
+                  <div>HYALURONIC BOOST SONO</div>
+                  <small class="text-muted"
+                    >Diese hochwirksame Behandlung nutzt die Kraft von
+                    Hyaluronsäure in Kombination mit
+                  </small>
+                  <div class="mt-2">
+                    <button
+                      class="btn btn-link p-0 text-decoration-none d-flex align-items-center"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#hyaluronicBoostSono"
+                      aria-expanded="false"
+                      aria-controls="hyaluronicBoostSono"
                     >
-                      <path
-                        d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
-                      />
-                    </svg>
-                  </button>
+                      More Info
+                      <svg
+                        class="ms-1 collapse-arrow"
+                        width="12"
+                        height="12"
+                        viewBox="0 0 16 16"
+                        fill="currentColor"
+                      >
+                        <path
+                          d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
+                        />
+                      </svg>
+                    </button>
+                  </div>
                 </div>
-              </div>
-              <div
-                class="col-2 d-flex align-items-center justify-content-center"
-              >
-                75 min
-              </div>
-              <div
-                class="col-2 d-flex align-items-center justify-content-center"
-              >
-                95€
-              </div>
-              <div class="collapse mt-2 col-12" id="thermischesBalanceRitual">
-                <small class="mb-0 px-3 text-muted"
-                  >Ein harmonisierendes Ritual, das die heilende Kraft der
-                  warmen Vulkansteine mit sanften, fließenden Massagebewegungen
-                  vereint. Die wohltuende Wärme dringt tief in die Muskulatur
-                  ein, löst Verspannungen und fördert die Durchblutung, während
-                  die Seele zur Ruhe kommt. Dieses ganzheitliche Erlebnis bringt
-                  Körper und Geist in Einklang und schenkt Ihnen ein tiefes
-                  Gefühl der Entspannung und Regeneration.
-                </small>
-              </div>
-            </div>
-
-            <!-- # This is one row -->
-            <div class="price-list-item row">
-              <div class="col-8">
-                <div>DETOX FÜR DEN RÜCKEN</div>
-                <small class="text-muted"
-                  >Eine ganzheitliche Behandlung zur Tiefenreinigung und Pflege
-                  des Rückens
-                </small>
-                <div class="mt-2">
-                  <button
-                    class="btn btn-link p-0 text-decoration-none d-flex align-items-center"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#detoxFurDenRucken"
-                    aria-expanded="false"
-                    aria-controls="detoxFurDenRucken"
-                  >
-                    More Info
-                    <svg
-                      class="ms-1 collapse-arrow"
-                      width="12"
-                      height="12"
-                      viewBox="0 0 16 16"
-                      fill="currentColor"
-                    >
-                      <path
-                        d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
-                      />
-                    </svg>
-                  </button>
+                <div
+                  class="col-2 d-flex align-items-center justify-content-center"
+                >
+                  40 min
                 </div>
-              </div>
-              <div
-                class="col-2 d-flex align-items-center justify-content-center"
-              >
-                50 min
-              </div>
-              <div
-                class="col-2 d-flex align-items-center justify-content-center"
-              >
-                75€
-              </div>
-              <div class="collapse mt-2 col-12" id="detoxFurDenRucken">
-                <small class="mb-0 px-3 text-muted"
-                  >Eine ganzheitliche Behandlung zur Tiefenreinigung und Pflege
-                  des Rückens. Sanftes Peeling entfernt abgestorbene Hautzellen
-                  und bereitet die Haut optimal auf das manuelle, gründliche
-                  Reinigen vor. Durch eine beruhigende Massage wird die Haut
-                  stimuliert und Verspannungen gelöst. Abschließend wird die
-                  Haut mit einer intensiven Pflege verwöhnt, die sie weich und
-                  geschmeidig macht.
-                </small>
+                <div
+                  class="col-2 d-flex align-items-center justify-content-center"
+                >
+                  50€
+                </div>
+                <div class="collapse mt-2 col-12" id="hyaluronicBoostSono">
+                  <small class="mb-0 px-3 text-muted"
+                    >Diese hochwirksame Behandlung nutzt die Kraft von
+                    Hyaluronsäure in Kombination mit Ultraschalltechnologie, um
+                    der Haut sofort intensive Feuchtigkeit zu verleihen. Durch
+                    den Ultraschall wird die Hyaluronsäure tief in die Haut
+                    eingeschleust, was eine optimale Hydration gewährleistet und
+                    die Hautstruktur merklich verbessert. Die Haut erhält ein
+                    frisches, pralles Aussehen und fühlt sich sofort glatter und
+                    geschmeidiger an. Diese Express-Behandlung eignet sich ideal
+                    für eine schnelle Auffrischung der Haut vor besonderen
+                    Anlässen oder zur regelmäßigen Feuchtigkeitsversorgung, um
+                    Trockenheit und Dehydrierung zu vermeiden.
+                  </small>
+                </div>
               </div>
             </div>
           </div>
 
-          <!-- GLOW HYDRA Section -->
-          <h3>GLOW HYDRA</h3>
-          <div class="price-list-container">
-            <!-- Price list header -->
-            <div class="price-list-header row">
-              <div class="col-8"><strong>Service</strong></div>
-              <div class="col-2 text-center"><strong>Duration</strong></div>
-              <div class="col-2 text-center"><strong>Price</strong></div>
-            </div>
+          <!-- ANTI-AGING Tab -->
+          <div class="tab-pane fade" id="antiaging" role="tabpanel">
+            <div class="price-list-container">
+              <!-- Price list header -->
+              <div class="price-list-header row">
+                <div class="col-8"><strong>Service</strong></div>
+                <div class="col-2 text-center"><strong>Duration</strong></div>
+                <div class="col-2 text-center"><strong>Price</strong></div>
+              </div>
 
-            <!-- Individual items -->
-            <div class="price-list-item row">
-              <div class="col-8">
-                <div>GLOW HYDRA FACIAL</div>
-              </div>
-              <div
-                class="col-2 d-flex align-items-center justify-content-center"
-              >
-                60 min
-              </div>
-              <div
-                class="col-2 d-flex align-items-center justify-content-center"
-              >
-                130€
-              </div>
-            </div>
-
-            <!-- # This is one row -->
-            <div class="price-list-item row">
-              <div class="col-8">
-                <div>GLOW HYDRA FACIAL GESICHT & HALS & DEKOLLETE</div>
-              </div>
-              <div
-                class="col-2 d-flex align-items-center justify-content-center"
-              >
-                75 min
-              </div>
-              <div
-                class="col-2 d-flex align-items-center justify-content-center"
-              >
-                150€
-              </div>
-            </div>
-
-            <!-- # This is one row -->
-            <div class="price-list-item row">
-              <div class="col-8">
-                <div>GLOW HYDRA FACIAL + ULTRASCHALL</div>
-                <small class="text-muted"
-                  >Die Ultraschallbehandlung nach einem Glow Facial verstärkt
-                  die Wirkung der zuvor eingearbeiteten
-                </small>
-                <div class="mt-2">
-                  <button
-                    class="btn btn-link p-0 text-decoration-none d-flex align-items-center"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#glowHydraFacialUltraschall"
-                    aria-expanded="false"
-                    aria-controls="glowHydraFacialUltraschall"
-                  >
-                    More Info
-                    <svg
-                      class="ms-1 collapse-arrow"
-                      width="12"
-                      height="12"
-                      viewBox="0 0 16 16"
-                      fill="currentColor"
+              <!-- Individual items -->
+              <div class="price-list-item row">
+                <div class="col-8">
+                  <div>CLEANSE & REFRESH</div>
+                  <small class="text-muted"
+                    >Diese ganzheitliche Behandlung kombiniert Tiefenreinigung,
+                    sanfte Erneuerung und
+                  </small>
+                  <div class="mt-2">
+                    <button
+                      class="btn btn-link p-0 text-decoration-none d-flex align-items-center"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#cleanseRefresh"
+                      aria-expanded="false"
+                      aria-controls="cleanseRefresh"
                     >
-                      <path
-                        d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
-                      />
-                    </svg>
-                  </button>
+                      More Info
+                      <svg
+                        class="ms-1 collapse-arrow"
+                        width="12"
+                        height="12"
+                        viewBox="0 0 16 16"
+                        fill="currentColor"
+                      >
+                        <path
+                          d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="col-2 d-flex align-items-center justify-content-center"
+                >
+                  60 min
+                </div>
+                <div
+                  class="col-2 d-flex align-items-center justify-content-center"
+                >
+                  70€
+                </div>
+                <div class="collapse mt-2 col-12" id="cleanseRefresh">
+                  <small class="mb-0 px-3 text-muted"
+                    >Diese ganzheitliche Behandlung kombiniert Tiefenreinigung,
+                    sanfte Erneuerung und intensive Pflege für ein klares,
+                    strahlendes Hautbild. Nach der gründlichen Reinigung und
+                    einem Peeling werden Unreinheiten gezielt entfernt. Eine
+                    stimulierende Massage fördert die Durchblutung und
+                    verbessert die Hautelastizität. Abschließend versorgt eine
+                    regenerierende Maske die Haut mit essenziellen Nährstoffen,
+                    beruhigt und schenkt neue Frische.</small
+                  >
                 </div>
               </div>
-              <div
-                class="col-2 d-flex align-items-center justify-content-center"
-              >
-                75 min
-              </div>
-              <div
-                class="col-2 d-flex align-items-center justify-content-center"
-              >
-                145€
-              </div>
-              <div class="collapse mt-2 col-12" id="glowHydraFacialUltraschall">
-                <small class="mb-0 px-3 text-muted"
-                  >Die Ultraschallbehandlung nach einem Glow Facial verstärkt
-                  die Wirkung der zuvor eingearbeiteten Wirkstoffe, indem sie
-                  deren tiefere Einschleusung in die Haut fördert. Gleichzeitig
-                  wirkt der Ultraschall beruhigend, reduziert Rötungen und
-                  unterstützt die Zellregeneration. Durch die sanfte Stimulation
-                  der Mikrozirkulation wird die Haut optimal durchblutet,
-                  wodurch der Teint frischer und strahlender erscheint. Zudem
-                  wird die Kollagen- und Elastinproduktion aktiviert, was zu
-                  einer sichtbaren Straffung und Glättung der Haut führt. Der
-                  zusätzliche Entgiftungseffekt unterstützt den Lymphfluss und
-                  sorgt für eine verfeinerte, klare Hautstruktur.
-                </small>
+
+              <!-- # This is one row -->
+              <div class="price-list-item row">
+                <div class="col-8">
+                  <div>CLEANSE & REFRESH SONO</div>
+                  <small class="text-muted"
+                    >Diese ganzheitliche Behandlung kombiniert Tiefenreinigung,
+                    sanfte Erneuerung und
+                  </small>
+                  <div class="mt-2">
+                    <button
+                      class="btn btn-link p-0 text-decoration-none d-flex align-items-center"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#cleanseRefreshSono"
+                      aria-expanded="false"
+                      aria-controls="cleanseRefreshSono"
+                    >
+                      More Info
+                      <svg
+                        class="ms-1 collapse-arrow"
+                        width="12"
+                        height="12"
+                        viewBox="0 0 16 16"
+                        fill="currentColor"
+                      >
+                        <path
+                          d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="col-2 d-flex align-items-center justify-content-center"
+                >
+                  75 min
+                </div>
+                <div
+                  class="col-2 d-flex align-items-center justify-content-center"
+                >
+                  85€
+                </div>
+                <div class="collapse mt-2 col-12" id="cleanseRefreshSono">
+                  <small class="mb-0 px-3 text-muted"
+                    >Diese ganzheitliche Behandlung kombiniert Tiefenreinigung,
+                    sanfte Erneuerung und intensive Pflege für ein klares,
+                    strahlendes Hautbild. Nach der gründlichen Reinigung und
+                    einem Peeling werden Unreinheiten gezielt entfernt. Eine
+                    stimulierende Massage fördert die Durchblutung und
+                    verbessert die Hautelastizität. Abschließend versorgt eine
+                    regenerierende Maske die Haut mit essenziellen Nährstoffen,
+                    beruhigt und schenkt neue Frische. Der Ultraschall fördert
+                    die Tiefenaufnahme aktiver Wirkstoffe, verbessert die
+                    Zellregeneration und steigert die Hautelastizität.
+                  </small>
+                </div>
               </div>
             </div>
+          </div>
 
-            <!-- # This is one row -->
-            <div class="price-list-item row">
-              <div class="col-8">
-                <div>
-                  GLOW HYDRA FACIAL GESICHT & HALS & DEKOLLETE + ULTRASCHALL
+          <!-- BERUHIGEND Tab -->
+          <div class="tab-pane fade" id="beruhigend" role="tabpanel">
+            <div class="price-list-container">
+              <!-- Price list header -->
+              <div class="price-list-header row">
+                <div class="col-8"><strong>Service</strong></div>
+                <div class="col-2 text-center"><strong>Duration</strong></div>
+                <div class="col-2 text-center"><strong>Price</strong></div>
+              </div>
+  
+              <!-- Individual items -->
+              <div class="price-list-item row">
+                <div class="col-8">
+                  <div>SOOTHING TOUCH</div>
+                  <small class="text-muted">Tiefenberuhigung und Schutz für zarte Haut</small>
+                  <div class="mt-2">
+                    <button class="btn btn-link p-0 text-decoration-none d-flex align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#soothingTouch" aria-expanded="false" aria-controls="soothingTouch">
+                      More Info
+                      <svg class="ms-1 collapse-arrow" width="12" height="12" viewBox="0 0 16 16" fill="currentColor">
+                        <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"></path>
+                      </svg>
+                    </button>
+                  </div>
                 </div>
-                <small class="text-muted"
-                  >Die Ultraschallbehandlung nach einem Glow Facial verstärkt
-                  die Wirkung der zuvor eingearbeiteten
-                </small>
-                <div class="mt-2">
-                  <button
-                    class="btn btn-link p-0 text-decoration-none d-flex align-items-center"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#glowHydraFacialGesichtHailsDekollete"
-                    aria-expanded="false"
-                    aria-controls="glowHydraFacialGesichtHailsDekollete"
-                  >
-                    More Info
-                    <svg
-                      class="ms-1 collapse-arrow"
-                      width="12"
-                      height="12"
-                      viewBox="0 0 16 16"
-                      fill="currentColor"
-                    >
-                      <path
-                        d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
-                      />
-                    </svg>
-                  </button>
+                <div class="col-2 d-flex align-items-center justify-content-center">
+                  60 min
+                </div>
+                <div class="col-2 d-flex align-items-center justify-content-center">
+                  75€
+                </div>
+                <div class="collapse mt-2 col-12" id="soothingTouch">
+                  <small class="mb-0 px-3 text-muted">Diese sanfte Behandlung wurde speziell für empfindliche,
+                    gereizte oder zu Rötungen neigende Haut entwickelt. Durch
+                    schonende Reinigung und reizlindernde Wirkstoffe wird die Haut
+                    reduzieren Rötungen, lindern Irritationen und spenden
+                    intensive Feuchtigkeit. Eine entspannende Massage und eine
+                    Maske runden die Behandlung ab und sorgen für ein angenehm
+                    entspanntes, ausgeglichenes Hautgefühl.
+                  </small>
                 </div>
               </div>
-              <div
-                class="col-2 d-flex align-items-center justify-content-center"
-              >
-                90 min
+  
+              <!-- # This is one row -->
+              <div class="price-list-item row">
+                <div class="col-8">
+                  <div>SOOTHING TOUCH SONO</div>
+                  <small class="text-muted">Diese speziell entwickelte Behandlung wirkt gezielt gegen
+                    Rötungen und Gefäßinstabilität
+                  </small>
+                  <div class="mt-2">
+                    <button class="btn btn-link p-0 text-decoration-none d-flex align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#soothingTouchSono" aria-expanded="false" aria-controls="soothingTouchSono">
+                      More Info
+                      <svg class="ms-1 collapse-arrow" width="12" height="12" viewBox="0 0 16 16" fill="currentColor">
+                        <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="col-2 d-flex align-items-center justify-content-center">
+                  60 min
+                </div>
+                <div class="col-2 d-flex align-items-center justify-content-center">
+                  75€
+                </div>
+                <div class="collapse mt-2 col-12" id="soothingTouchSono">
+                  <small class="mb-0 px-3 text-muted">Diese speziell entwickelte Behandlung wirkt gezielt gegen
+                    Rötungen und Gefäßinstabilität bei Couperose und Rosazea.
+                    Beruhigende Wirkstoffe lindern Irritationen, stärken die
+                    Hautbarriere und reduzieren das Erscheinungsbild von Rötungen.
+                    Eine kühlende Maske und eine sanfte Massage fördern die
+                    Hautberuhigung, während entzündungshemmende Pflegeprodukte für
+                    ein ausgeglichenes, entspanntes Hautgefühl sorgen. Ideal für
+                    empfindliche Haut, die zu erweiterten Äderchen und Reizungen
+                    neigt.
+                  </small>
+                </div>
               </div>
-              <div
-                class="col-2 d-flex align-items-center justify-content-center"
-              >
-                165€
+  
+              <!-- # This is one row -->
+              <div class="price-list-item row">
+                <div class="col-8">
+                  <div>ROSACEA / COUPEROSE RELIEF</div>
+                  <small class="text-muted">Diese speziell entwickelte Behandlung wirkt gezielt gegen
+                    Rötungen und Gefäßinstabilität
+                  </small>
+                  <div class="mt-2">
+                    <button class="btn btn-link p-0 text-decoration-none d-flex align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#rosaceaCouperoseRelief" aria-expanded="false" aria-controls="rosaceaCouperoseRelief">
+                      More Info
+                      <svg class="ms-1 collapse-arrow" width="12" height="12" viewBox="0 0 16 16" fill="currentColor">
+                        <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="col-2 d-flex align-items-center justify-content-center">
+                  60 min
+                </div>
+                <div class="col-2 d-flex align-items-center justify-content-center">
+                  75€
+                </div>
+                <div class="collapse mt-2 col-12" id="rosaceaCouperoseRelief">
+                  <small class="mb-0 px-3 text-muted">Diese speziell entwickelte Behandlung wirkt gezielt gegen
+                    Rötungen und Gefäßinstabilität bei Couperose und Rosazea.
+                    Beruhigende Wirkstoffe lindern Irritationen, stärken die
+                    Hautbarriere und reduzieren das Erscheinungsbild von Rötungen.
+                    Eine kühlende Maske und eine sanfte Massage fördern die
+                    Hautberuhigung, während entzündungshemmende Pflegeprodukte für
+                    ein ausgeglichenes, entspanntes Hautgefühl sorgen. Ideal für
+                    empfindliche Haut, die zu erweiterten Äderchen und Reizungen
+                    neigt.
+                  </small>
+                </div>
               </div>
-              <div
-                class="collapse mt-2 col-12"
-                id="glowHydraFacialGesichtHailsDekollete"
-              >
-                <small class="mb-0 px-3 text-muted"
-                  >Die Ultraschallbehandlung nach einem Glow Facial verstärkt
-                  die Wirkung der zuvor eingearbeiteten Wirkstoffe, indem sie
-                  deren tiefere Einschleusung in die Haut fördert. Gleichzeitig
-                  wirkt der Ultraschall beruhigend, reduziert Rötungen und
-                  unterstützt die Zellregeneration. Durch die sanfte Stimulation
-                  der Mikrozirkulation wird die Haut optimal durchblutet,
-                  wodurch der Teint frischer und strahlender erscheint. Zudem
-                  wird die Kollagen- und Elastinproduktion aktiviert, was zu
-                  einer sichtbaren Straffung und Glättung der Haut führt. Der
-                  zusätzliche Entgiftungseffekt unterstützt den Lymphfluss und
-                  sorgt für eine verfeinerte, klare Hautstruktur.
-                </small>
+              <!-- # This is one row -->
+              <div class="price-list-item row">
+                <div class="col-8">
+                  <div>ROSACEA / COUPEROSE RELIEF SONO</div>
+                  <small class="text-muted">Diese fortschrittliche Behandlung kombiniert sanfte Pflege
+                    mit der regenerierenden Kraft des
+                  </small>
+                  <div class="mt-2">
+                    <button class="btn btn-link p-0 text-decoration-none d-flex align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#RosaceaCouperoseReliefSono" aria-expanded="false" aria-controls="RosaceaCouperoseReliefSono">
+                      More Info
+                      <svg class="ms-1 collapse-arrow" width="12" height="12" viewBox="0 0 16 16" fill="currentColor">
+                        <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="col-2 d-flex align-items-center justify-content-center">
+                  75 min
+                </div>
+                <div class="col-2 d-flex align-items-center justify-content-center">
+                  90€
+                </div>
+                <div class="collapse mt-2 col-12" id="RosaceaCouperoseReliefSono">
+                  <small class="mb-0 px-3 text-muted">
+                    Diese fortschrittliche Behandlung kombiniert sanfte Pflege mit
+                    der regenerierenden Kraft des Ultraschalls. Die hochfrequenten
+                    Schallwellen ermöglichen das tiefe Eindringen beruhigender
+                    Wirkstoffe in das Gewebe, stärken die Hautstruktur und fördern
+                    die Zellregeneration. Speziell abgestimmte Wirkstoffe
+                    reduzieren Rötungen, beruhigen empfindliche Haut und
+                    unterstützen die Gefäßstabilität. Eine kühlende Maske und eine
+                    schonende Massage sorgen für zusätzliche Entspannung und ein
+                    ausgeglichenes Hautbild. Perfekt für Haut mit Rosazea oder
+                    Couperose, die intensive Pflege und Stärkung benötigt.
+                  </small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- GREEN PEEL® Tab -->
+          <div class="tab-pane fade" id="greenpeel" role="tabpanel">
+            <div class="price-list-container">
+              <!-- Price list header -->
+              <div class="price-list-header row">
+                <div class="col-8"><strong>Service</strong></div>
+                <div class="col-2 text-center"><strong>Duration</strong></div>
+                <div class="col-2 text-center"><strong>Price</strong></div>
+              </div>
+  
+              <!-- Individual items -->
+              <div class="price-list-item row">
+                <div class="col-8">
+                  <div>GREEN PEEL® Kräuterschälkur CLASSIC</div>
+                  <small class="text-muted">Durch die anregende Kräutermassage werden die obersten
+                    Schichten der Epidermis
+                  </small>
+                  <div class="mt-2">
+                    <button class="btn btn-link p-0 text-decoration-none d-flex align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#greenPeelKrauter" aria-expanded="false" aria-controls="greenPeelKrauter">
+                      More Info
+                      <svg class="ms-1 collapse-arrow" width="12" height="12" viewBox="0 0 16 16" fill="currentColor">
+                        <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="col-2 d-flex align-items-center justify-content-center">
+                  60 min
+                </div>
+                <div class="col-2 d-flex align-items-center justify-content-center">
+                  195€
+                </div>
+                <div class="collapse mt-2 col-12" id="greenPeelKrauter">
+                  <small class="mb-0 px-3 text-muted">Durch die anregende Kräutermassage werden die obersten
+                    Schichten der Epidermis abgetragen, die Durchblutung, die
+                    Sauerstoffversorgung sowie der Hautstoffwechsel gesteigert und
+                    die Regenerationsprozesse der Haut werden angeregt. So wird
+                    die übliche Zeit der Hauterneuerung von 28 auf 5 Tage
+                    verkürzt. Nach dem Schälprozess erscheint eine neue, frische
+                    Haut. Bei der abschließenden Beauty Finish Behandlung wird die
+                    dann besonders aufnahmefähige Haut Diese Behandlungsvariante
+                    wird angewendet bei: Sonnengeschädigter Haut &amp; Falten (zur
+                    Anti-Aging Prophylaxe) Erschlaffte Körperhaut (Bauchdecke,
+                    Oberarme, Oberschenkel) Einigen Formen von
+                    Hyperpigmentierungen Unreiner Haut, Talgzysten Narben &amp;
+                    Dehnungsstreifen (Striae) Zu vorzeitiger Faltenbildung
+                    neigender Haut Kräuterschälkur inkl. Homecare-Set für
+                    intensive Hauterneuerung.
+                  </small>
+                </div>
+              </div>
+  
+              <!-- # This is one row -->
+              <div class="price-list-item row">
+                <div class="col-8">
+                  <div>GREEN PEEL® Energy</div>
+                  <small class="text-muted">Die Energy Behandlung regt die Durchblutung, die
+                    Sauerstoffversorgung sowie den
+                  </small>
+                  <div class="mt-2">
+                    <button class="btn btn-link p-0 text-decoration-none d-flex align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#GreenPeelEnergy" aria-expanded="false" aria-controls="GreenPeelEnergy">
+                      More Info
+                      <svg class="ms-1 collapse-arrow" width="12" height="12" viewBox="0 0 16 16" fill="currentColor">
+                        <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="col-2 d-flex align-items-center justify-content-center">
+                  60 min
+                </div>
+                <div class="col-2 d-flex align-items-center justify-content-center">
+                  125€
+                </div>
+                <div class="collapse mt-2 col-12" id="GreenPeelEnergy">
+                  <small class="mb-0 px-3 text-muted">Die Energy Behandlung regt die Durchblutung, die
+                    Sauerstoffversorgung sowie den Stoffwechsel der Zellen an und
+                    führt zu einer natürlichen Verbesserung des Hautbildes ohne
+                    Schälprozess. Die Haut erhält spürbar mehr Energie,
+                    altersbedingte Hauterscheinungen werden gemildert. Diese
+                    Behandlungsvariante wird angewendet bei: Falten &amp;
+                    Anti-Aging-Pophylaxe Unreinheiten Pigmentstörungen Als
+                    Körperbehandlung wird GREEN PEEL® Energy z.B. angewendet bei:
+                    Dehnungsstreifen &amp; Cellulite Reibeisenhaut Elastizitätsverlust
+                  </small>
+                </div>
+              </div>
+  
+              <!-- GREEN PEEL® Fresh Up Section -->
+              <div class="price-list-item row">
+                <div class="col-8">
+                  <div>GREEN PEEL® Fresh Up</div>
+                  <small class="text-muted">Mit dieser sanften Variante wird die Haut nicht geschält,
+                    sondern mit natürlichen
+                  </small>
+                  <div class="mt-2">
+                    <button class="btn btn-link p-0 text-decoration-none d-flex align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#greenPeelFreshUp" aria-expanded="false" aria-controls="greenPeelFreshUp">
+                      More Info
+                      <svg class="ms-1 collapse-arrow" width="12" height="12" viewBox="0 0 16 16" fill="currentColor">
+                        <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="col-2 d-flex align-items-center justify-content-center">
+                  60 min
+                </div>
+                <div class="col-2 d-flex align-items-center justify-content-center">
+                  95€
+                </div>
+                <div class="collapse mt-2 col-12" id="greenPeelFreshUp">
+                  <small class="mb-0 px-3 text-muted">Mit dieser sanften Variante wird die Haut nicht geschält,
+                    sondern mit natürlichen Kräutern angeregt und erfrischt. Die
+                    Durchblutung wird stimuliert, die Poren öffnen sich und die
+                    Haut ist nun in der Lage, die Wirkstoffe der anschließenden
+                    Pflege optimal aufzunehmen. Der Teint erscheint rosig, wirkt
+                    erholter und frischer. Diese Behandlungsvariante wird
+                    angewendet bei: Müde wirkender Haut of Ersten Zeichen der
+                    Hautalterung Fahlem Teint Verstärkter Verhornung
+                  </small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- GESICHT Tab -->
+          <div class="tab-pane fade" id="gesicht" role="tabpanel">
+            <div class="price-list-container">
+              <!-- Price list header -->
+              <div class="price-list-header row">
+                <div class="col-8"><strong>Service</strong></div>
+                <div class="col-2 text-center"><strong>Duration</strong></div>
+                <div class="col-2 text-center"><strong>Price</strong></div>
+              </div>
+  
+              <!-- Individual items -->
+              <div class="price-list-item row">
+                <div class="col-8">
+                  <div>MICRONEEDLING</div>
+                  <small class="text-muted">Hautverjüngung durch Kollagenstimulation.
+                  </small>
+                  <div class="mt-2">
+                    <button class="btn btn-link p-0 text-decoration-none d-flex align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#skinConsultationDetails" aria-expanded="false" aria-controls="skinConsultationDetails">
+                      More Info
+                      <svg class="ms-1 collapse-arrow" width="12" height="12" viewBox="0 0 16 16" fill="currentColor">
+                        <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="col-2 d-flex align-items-center justify-content-center">
+                  60 min
+                </div>
+                <div class="col-2 d-flex align-items-center justify-content-center">
+                  105€
+                </div>
+                <div class="collapse mt-2 col-12" id="skinConsultationDetails">
+                  <small class="mb-0 px-3 text-muted">Eine Behandlung mit individuell für jeden Kunden ausgewählter
+                    steriler Kapsel, basierend auf Hauttyp und Hautproblemen.
+                    Fördert die Hautregeneration und verbessert die Hautstruktur.
+                  </small>
+                </div>
+              </div>
+  
+              <!-- # This is one row -->
+              <div class="price-list-item row">
+                <div class="col-8">
+                  <div>MICRONEEDLING GESICHT &amp; DEKOLLETE</div>
+                  <small class="text-muted">Intensives Microneedling für Gesicht und Dekolleté.
+                  </small>
+                </div>
+                <div class="col-2 d-flex align-items-center justify-content-center">
+                  75 min
+                </div>
+                <div class="col-2 d-flex align-items-center justify-content-center">
+                  135€
+                </div>
+              </div>
+  
+              <!-- # This is one row -->
+              <div class="price-list-item row">
+                <div class="col-8">
+                  <div>SÄUREBEHANDLUNG</div>
+                  <small class="text-muted">Chemisches Peeling für verschiedene Hautprobleme.
+                  </small>
+                  <div class="mt-2">
+                    <button class="btn btn-link p-0 text-decoration-none d-flex align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#saurebehandlung" aria-expanded="false" aria-controls="saurebehandlung">
+                      More Info
+                      <svg class="ms-1 collapse-arrow" width="12" height="12" viewBox="0 0 16 16" fill="currentColor">
+                        <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="col-2 d-flex align-items-center justify-content-center">
+                  60 min
+                </div>
+                <div class="col-2 d-flex align-items-center justify-content-center">
+                  85€
+                </div>
+                <div class="collapse mt-2 col-12" id="saurebehandlung">
+                  <small class="mb-0 px-3 text-muted">Diese gezielte Behandlung verwendet hochwertige Fruchtsäuren,
+                    um abgestorbene Hautzellen sanft zu entfernen, die
+                    Zellerneuerung anzuregen und die Hautstruktur zu verfeinern.
+                    Sie hilft bei der Behandlung von Unreinheiten,
+                    Hyperpigmentierung, feinen Linien und vergrößerten Poren.
+                    Ideal für alle Hauttypen, um einen klareren, strahlenden Teint
+                    zu erzielen.
+                  </small>
+                </div>
+              </div>
+  
+              <!-- # This is one row -->
+              <div class="price-list-item row">
+                <div class="col-8">
+                  <div>KOSMETISCHE ZAHNAUFHELLUNG</div>
+                  <small class="text-muted">Professionelles Bleaching für strahlendere Zähne.
+                  </small>
+                  <div class="mt-2">
+                    <button class="btn btn-link p-0 text-decoration-none d-flex align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#KosmetischeZahn" aria-expanded="false" aria-controls="KosmetischeZahn">
+                      More Info
+                      <svg class="ms-1 collapse-arrow" width="12" height="12" viewBox="0 0 16 16" fill="currentColor">
+                        <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="col-2 d-flex align-items-center justify-content-center">
+                  60 min
+                </div>
+                <div class="col-2 d-flex align-items-center justify-content-center">
+                  80€
+                </div>
+                <div class="collapse mt-2 col-12" id="KosmetischeZahn">
+                  <small class="mb-0 px-3 text-muted">Es wird empfohlen, zwei Behandlungen im Abstand von einer
+                    Woche durchzuführen. Zur Erhaltung des Ergebnisses wird eine
+                    Auffrischung alle 3-4 Monate, je nach Zahnstruktur, empfohlen.
+                  </small>
+                </div>
+              </div>
+  
+              <!-- # This is one row -->
+              <div class="price-list-item row">
+                <div class="col-8">
+                  <div>TEENAGER SKIN CARE U18</div>
+                </div>
+                <div class="col-2 d-flex align-items-center justify-content-center">
+                  50 min
+                </div>
+                <div class="col-2 d-flex align-items-center justify-content-center">
+                  45€
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- AUGEN Tab -->
+          <div class="tab-pane fade" id="augen" role="tabpanel">
+            <div class="price-list-container">
+              <!-- Price list header -->
+              <div class="price-list-header row">
+                <div class="col-8"><strong>Service</strong></div>
+                <div class="col-2 text-center"><strong>Duration</strong></div>
+                <div class="col-2 text-center"><strong>Price</strong></div>
+              </div>
+  
+              <!-- Individual items -->
+              <div class="price-list-item row">
+                <div class="col-8">
+                  <div>IDEALE AUGENBRAUEN</div>
+                  <small class="text-muted">Formen, färben, zupfen und waxen für perfekte Augenbrauen.
+                  </small>
+                </div>
+                <div class="col-2 d-flex align-items-center justify-content-center">
+                  30 min
+                </div>
+                <div class="col-2 d-flex align-items-center justify-content-center">
+                  35€
+                </div>
+              </div>
+  
+              <!-- # This is one row -->
+              <div class="price-list-item row">
+                <div class="col-8">
+                  <div>IDEALE WIMPERN</div>
+                  <small class="text-muted">Färben der Wimpern inkl. Augenpflege.
+                  </small>
+                </div>
+                <div class="col-2 d-flex align-items-center justify-content-center">
+                  20 min
+                </div>
+                <div class="col-2 d-flex align-items-center justify-content-center">
+                  15€
+                </div>
+              </div>
+  
+              <!-- # This is one row -->
+              <div class="price-list-item row">
+                <div class="col-8">
+                  <div>STRAHLENDE AUGEN</div>
+                  <small class="text-muted">Augenbrauen + Wimpern: Färben, Formen, Zupfen, Waxen, Pflege
+                  </small>
+                </div>
+                <div class="col-2 d-flex align-items-center justify-content-center">
+                  60 min
+                </div>
+                <div class="col-2 d-flex align-items-center justify-content-center">
+                  40€
+                </div>
+              </div>
+  
+              <!-- # This is one row -->
+              <div class="price-list-item row">
+                <div class="col-8">
+                  <div>LASHLIFTING</div>
+                  <small class="text-muted">Lang anhaltendes Wimpernlifting inklusive Färben und
+                    Keratinpflege
+                  </small>
+                  <div class="mt-2">
+                    <button class="btn btn-link p-0 text-decoration-none d-flex align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#lashlifting" aria-expanded="false" aria-controls="lashlifting">
+                      More Info
+                      <svg class="ms-1 collapse-arrow" width="12" height="12" viewBox="0 0 16 16" fill="currentColor">
+                        <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="col-2 d-flex align-items-center justify-content-center">
+                  60 min
+                </div>
+                <div class="col-2 d-flex align-items-center justify-content-center">
+                  60€
+                </div>
+                <div class="collapse mt-2 col-12" id="lashlifting">
+                  <small class="mb-0 px-3 text-muted">Lang anhaltendes Wimpernlifting inklusive Färben und
+                    Keratinpflege, der Effekt hält 6 bis 8 Wochen.
+                  </small>
+                </div>
+              </div>
+  
+              <!-- # This is one row -->
+              <div class="price-list-item row">
+                <div class="col-8">
+                  <div>BROWLIFTING</div>
+                  <small class="text-muted">Augenbrauenlifting inkl. Formen, Färben und Pflege.
+                  </small>
+                </div>
+                <div class="col-2 d-flex align-items-center justify-content-center">
+                  60 min
+                </div>
+                <div class="col-2 d-flex align-items-center justify-content-center">
+                  50€
+                </div>
+              </div>
+  
+              <!-- # This is one row -->
+              <div class="price-list-item row">
+                <div class="col-8">
+                  <div>LASH &amp; BROW LIFTING</div>
+                  <small class="text-muted">Inklusive Färben und Keratinpflege
+                  </small>
+                </div>
+                <div class="col-2 d-flex align-items-center justify-content-center">
+                  90 min
+                </div>
+                <div class="col-2 d-flex align-items-center justify-content-center">
+                  120€
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- KÖRPER Tab -->
+          <div class="tab-pane fade" id="koerper" role="tabpanel">
+            <div class="price-list-container">
+              <!-- Price list header -->
+              <div class="price-list-header row">
+                <div class="col-8"><strong>Service</strong></div>
+                <div class="col-2 text-center"><strong>Duration</strong></div>
+                <div class="col-2 text-center"><strong>Price</strong></div>
+              </div>
+  
+              <!-- Individual items -->
+              <div class="price-list-item row">
+                <div class="col-8">
+                  <div>KÖRPERBALANCE MASSAGE</div>
+                  <small class="text-muted">Eine wohltuende Massage mit hochwertigen Bio-Aromaölen, die
+                    den Körper von</small>
+                  <div class="mt-2">
+                    <button class="btn btn-link p-0 text-decoration-none d-flex align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#korperbalanceMassage" aria-expanded="false" aria-controls="korperbalanceMassage">
+                      More Info
+                      <svg class="ms-1 collapse-arrow" width="12" height="12" viewBox="0 0 16 16" fill="currentColor">
+                        <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="col-2 d-flex align-items-center justify-content-center">
+                  60 min
+                </div>
+                <div class="col-2 d-flex align-items-center justify-content-center">
+                  80€
+                </div>
+                <div class="collapse mt-2 col-12" id="korperbalanceMassage">
+                  <small class="mb-0 px-3 text-muted">Eine wohltuende Massage mit hochwertigen Bio-Aromaölen, die
+                    den Körper von Spannungen befreit und Geist sowie Sinne in
+                    Einklang bringt. Perfekt für eine tiefe Regeneration und
+                    vollständige Entspannung.
+                  </small>
+                </div>
+              </div>
+  
+              <!-- # This is one row -->
+              <div class="price-list-item row">
+                <div class="col-8">
+                  <div>HOLISTISCHE KÖRPERSTRAFFUNG</div>
+                  <small class="text-muted">Eine umfassende und hochwertige Behandlung zur Straffung und
+                    Revitalisierung Ihres
+                  </small>
+                  <div class="mt-2">
+                    <button class="btn btn-link p-0 text-decoration-none d-flex align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#holistischeKorperstraffung" aria-expanded="false" aria-controls="holistischeKorperstraffung">
+                      More Info
+                      <svg class="ms-1 collapse-arrow" width="12" height="12" viewBox="0 0 16 16" fill="currentColor">
+                        <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="col-2 d-flex align-items-center justify-content-center">
+                  90 min
+                </div>
+                <div class="col-2 d-flex align-items-center justify-content-center">
+                  105€
+                </div>
+                <div class="collapse mt-2 col-12" id="holistischeKorperstraffung">
+                  <small class="mb-0 px-3 text-muted">Eine umfassende und hochwertige Behandlung zur Straffung und
+                    Revitalisierung Ihres Körpers und Ihrer Haut. Die Kombination
+                    aus manuellem Massage, apparativem Vakuummassage, Peeling und
+                    intensiver Pflege sorgt für maximale Ergebnisse. Die Haut wird
+                    geglättet, intensiv durchfeuchtet und ihre Elastizität spürbar
+                    verbessert. Gleichzeitig werden Cellulite sichtbar reduziert,
+                    die Durchblutung und der Lymphfluss angeregt sowie
+                    Muskelverspannungen gelöst.
+                  </small>
+                </div>
+              </div>
+  
+              <!-- # This is one row -->
+              <div class="price-list-item row">
+                <div class="col-8">
+                  <div>THERMISCHES BALANCE RITUAL</div>
+                  <small class="text-muted">Ein harmonisierendes Ritual, das die heilende Kraft der
+                    warmen Vulkansteine mit sanften
+                  </small>
+                  <div class="mt-2">
+                    <button class="btn btn-link p-0 text-decoration-none d-flex align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#thermischesBalanceRitual" aria-expanded="false" aria-controls="thermischesBalanceRitual">
+                      More Info
+                      <svg class="ms-1 collapse-arrow" width="12" height="12" viewBox="0 0 16 16" fill="currentColor">
+                        <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="col-2 d-flex align-items-center justify-content-center">
+                  75 min
+                </div>
+                <div class="col-2 d-flex align-items-center justify-content-center">
+                  95€
+                </div>
+                <div class="collapse mt-2 col-12" id="thermischesBalanceRitual">
+                  <small class="mb-0 px-3 text-muted">Ein harmonisierendes Ritual, das die heilende Kraft der
+                    warmen Vulkansteine mit sanften, fließenden Massagebewegungen
+                    vereint. Die wohltuende Wärme dringt tief in die Muskulatur
+                    ein, löst Verspannungen und fördert die Durchblutung, während
+                    die Seele zur Ruhe kommt. Dieses ganzheitliche Erlebnis bringt
+                    Körper und Geist in Einklang und schenkt Ihnen ein tiefes
+                    Gefühl der Entspannung und Regeneration.
+                  </small>
+                </div>
+              </div>
+  
+              <!-- # This is one row -->
+              <div class="price-list-item row">
+                <div class="col-8">
+                  <div>DETOX FÜR DEN RÜCKEN</div>
+                  <small class="text-muted">Eine ganzheitliche Behandlung zur Tiefenreinigung und Pflege
+                    des Rückens
+                  </small>
+                  <div class="mt-2">
+                    <button class="btn btn-link p-0 text-decoration-none d-flex align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#detoxFurDenRucken" aria-expanded="false" aria-controls="detoxFurDenRucken">
+                      More Info
+                      <svg class="ms-1 collapse-arrow" width="12" height="12" viewBox="0 0 16 16" fill="currentColor">
+                        <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="col-2 d-flex align-items-center justify-content-center">
+                  50 min
+                </div>
+                <div class="col-2 d-flex align-items-center justify-content-center">
+                  75€
+                </div>
+                <div class="collapse mt-2 col-12" id="detoxFurDenRucken">
+                  <small class="mb-0 px-3 text-muted">Eine ganzheitliche Behandlung zur Tiefenreinigung und Pflege
+                    des Rückens. Sanftes Peeling entfernt abgestorbene Hautzellen
+                    und bereitet die Haut optimal auf das manuelle, gründliche
+                    Reinigen vor. Durch eine beruhigende Massage wird die Haut
+                    stimuliert und Verspannungen gelöst. Abschließend wird die
+                    Haut mit einer intensiven Pflege verwöhnt, die sie weich und
+                    geschmeidig macht.
+                  </small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- GLOW HYDRA Tab -->
+          <div class="tab-pane fade" id="glowhydra" role="tabpanel">
+            <div class="price-list-container">
+              <!-- Price list header -->
+              <div class="price-list-header row">
+                <div class="col-8"><strong>Service</strong></div>
+                <div class="col-2 text-center"><strong>Duration</strong></div>
+                <div class="col-2 text-center"><strong>Price</strong></div>
+              </div>
+  
+              <!-- Individual items -->
+              <div class="price-list-item row">
+                <div class="col-8">
+                  <div>GLOW HYDRA FACIAL</div>
+                </div>
+                <div class="col-2 d-flex align-items-center justify-content-center">
+                  60 min
+                </div>
+                <div class="col-2 d-flex align-items-center justify-content-center">
+                  130€
+                </div>
+              </div>
+  
+              <!-- # This is one row -->
+              <div class="price-list-item row">
+                <div class="col-8">
+                  <div>GLOW HYDRA FACIAL GESICHT &amp; HALS &amp; DEKOLLETE</div>
+                </div>
+                <div class="col-2 d-flex align-items-center justify-content-center">
+                  75 min
+                </div>
+                <div class="col-2 d-flex align-items-center justify-content-center">
+                  150€
+                </div>
+              </div>
+  
+              <!-- # This is one row -->
+              <div class="price-list-item row">
+                <div class="col-8">
+                  <div>GLOW HYDRA FACIAL + ULTRASCHALL</div>
+                  <small class="text-muted">Die Ultraschallbehandlung nach einem Glow Facial verstärkt
+                    die Wirkung der zuvor eingearbeiteten
+                  </small>
+                  <div class="mt-2">
+                    <button class="btn btn-link p-0 text-decoration-none d-flex align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#glowHydraFacialUltraschall" aria-expanded="false" aria-controls="glowHydraFacialUltraschall">
+                      More Info
+                      <svg class="ms-1 collapse-arrow" width="12" height="12" viewBox="0 0 16 16" fill="currentColor">
+                        <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="col-2 d-flex align-items-center justify-content-center">
+                  75 min
+                </div>
+                <div class="col-2 d-flex align-items-center justify-content-center">
+                  145€
+                </div>
+                <div class="collapse mt-2 col-12" id="glowHydraFacialUltraschall">
+                  <small class="mb-0 px-3 text-muted">Die Ultraschallbehandlung nach einem Glow Facial verstärkt
+                    die Wirkung der zuvor eingearbeiteten Wirkstoffe, indem sie
+                    deren tiefere Einschleusung in die Haut fördert. Gleichzeitig
+                    wirkt der Ultraschall beruhigend, reduziert Rötungen und
+                    unterstützt die Zellregeneration. Durch die sanfte Stimulation
+                    der Mikrozirkulation wird die Haut optimal durchblutet,
+                    wodurch der Teint frischer und strahlender erscheint. Zudem
+                    wird die Kollagen- und Elastinproduktion aktiviert, was zu
+                    einer sichtbaren Straffung und Glättung der Haut führt. Der
+                    zusätzliche Entgiftungseffekt unterstützt den Lymphfluss und
+                    sorgt für eine verfeinerte, klare Hautstruktur.
+                  </small>
+                </div>
+              </div>
+  
+              <!-- # This is one row -->
+              <div class="price-list-item row">
+                <div class="col-8">
+                  <div>
+                    GLOW HYDRA FACIAL GESICHT &amp; HALS &amp; DEKOLLETE + ULTRASCHALL
+                  </div>
+                  <small class="text-muted">Die Ultraschallbehandlung nach einem Glow Facial verstärkt
+                    die Wirkung der zuvor eingearbeiteten
+                  </small>
+                  <div class="mt-2">
+                    <button class="btn btn-link p-0 text-decoration-none d-flex align-items-center collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#glowHydraFacialGesichtHailsDekollete" aria-expanded="false" aria-controls="glowHydraFacialGesichtHailsDekollete">
+                      More Info
+                      <svg class="ms-1 collapse-arrow" width="12" height="12" viewBox="0 0 16 16" fill="currentColor">
+                        <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="col-2 d-flex align-items-center justify-content-center">
+                  90 min
+                </div>
+                <div class="col-2 d-flex align-items-center justify-content-center">
+                  165€
+                </div>
+                <div class="mt-2 col-12 collapse" id="glowHydraFacialGesichtHailsDekollete" style="">
+                  <small class="mb-0 px-3 text-muted">Die Ultraschallbehandlung nach einem Glow Facial verstärkt
+                    die Wirkung der zuvor eingearbeiteten Wirkstoffe, indem sie
+                    deren tiefere Einschleusung in die Haut fördert. Gleichzeitig
+                    wirkt der Ultraschall beruhigend, reduziert Rötungen und
+                    unterstützt die Zellregeneration. Durch die sanfte Stimulation
+                    der Mikrozirkulation wird die Haut optimal durchblutet,
+                    wodurch der Teint frischer und strahlender erscheint. Zudem
+                    wird die Kollagen- und Elastinproduktion aktiviert, was zu
+                    einer sichtbaren Straffung und Glättung der Haut führt. Der
+                    zusätzliche Entgiftungseffekt unterstützt den Lymphfluss und
+                    sorgt für eine verfeinerte, klare Hautstruktur.
+                  </small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Add more tab panes for other categories -->
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+      <div class="container">
+        <h2 class="text-center">About Us</h2>
+        <div class="row align-items-center mt-5">
+          <div class="col-lg-6 mb-4 mb-lg-0">
+            <div class="about-image">
+              <img
+                src="images/image_123650291-1.JPG"
+                alt="Beauty Studio Interior"
+                class="img-fluid rounded-3 shadow-lg"
+                style="max-width: 80%; display: block; margin: 0 auto"
+              />
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="about-content">
+              <h3 class="h4 mb-4">Your Beauty and Wellness Sanctuary</h3>
+              <p class="lead mb-4">
+                At Wellness Cosmo Beauty, we believe in providing high-quality
+                beauty services in a serene environment. Our expert team is
+                dedicated to helping you relax, unwind, and feel beautiful from
+                the inside out.
+              </p>
+              <div class="features">
+                <div class="feature-item">
+                  <i class="bi bi-check2-circle"></i>
+                  <span>Professional and certified beauty experts</span>
+                </div>
+                <div class="feature-item">
+                  <i class="bi bi-check2-circle"></i>
+                  <span>Premium quality products and equipment</span>
+                </div>
+                <div class="feature-item">
+                  <i class="bi bi-check2-circle"></i>
+                  <span>Personalized treatment plans</span>
+                </div>
+                <div class="feature-item">
+                  <i class="bi bi-check2-circle"></i>
+                  <span>Relaxing and comfortable atmosphere</span>
+                </div>
               </div>
             </div>
           </div>
@@ -2015,31 +1641,83 @@
       </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about">
-      <div class="container">
-        <h2 class="text-center">About Us</h2>
-        <p class="text-center">
-          At Beauty Studio, we believe in providing high-quality beauty services
-          in a serene environment. Our expert team is dedicated to helping you
-          relax, unwind, and feel beautiful from the inside out.
-        </p>
-      </div>
-    </section>
-
     <!-- Contact Section -->
-    <section id="contact" class="bg-white">
+    <section id="contact" class="contact-section">
       <div class="container">
         <h2 class="text-center">Contact Us</h2>
-        <div class="row mt-4">
-          <div class="col-lg-6 mb-4">
-            <h5>Location</h5>
-            <p>An d. Schmeilt 14, 40885 Ratingen</p>
+        <div class="row justify-content-center mt-5">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="contact-card">
+              <div class="icon-wrapper">
+                <i class="bi bi-geo-alt"></i>
+              </div>
+              <h3>Visit Us</h3>
+              <p>An d. Schmeilt 14<br />40885 Ratingen<br />Germany</p>
+              <a
+                href="https://goo.gl/maps/your-location"
+                target="_blank"
+                class="btn btn-outline-primary"
+              >
+                Get Directions
+              </a>
+            </div>
           </div>
-          <div class="col-lg-6 mb-4">
-            <h5>Contact Info</h5>
-            <div>instagram: cosmobeauty.one</div>
-            <div>Phone: +4915129043024</div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="contact-card">
+              <div class="icon-wrapper">
+                <i class="bi bi-clock"></i>
+              </div>
+              <h3>Opening Hours</h3>
+              <p>
+                Monday - Friday: 9:00 - 19:00<br />Saturday: 9:00 - 17:00<br />Sunday:
+                Closed
+              </p>
+              <a
+                href="https://www.planity.com/de-DE/wellness-cosmo-beauty-40885-ratingen"
+                target="_blank"
+                class="btn btn-outline-primary"
+              >
+                Book Appointment
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="contact-card">
+              <div class="icon-wrapper">
+                <i class="bi bi-headset"></i>
+              </div>
+              <h3>Get in Touch</h3>
+              <p>
+                <a href="tel:+4915129043024" class="contact-link">
+                  <i class="bi bi-telephone"></i> +49 151 2904 3024
+                </a>
+              </p>
+              <div class="social-links">
+                <a
+                  href="https://instagram.com/cosmobeauty.one"
+                  target="_blank"
+                  class="social-link"
+                >
+                  <i class="bi bi-instagram"></i>
+                </a>
+                <a
+                  href="https://facebook.com/your-page"
+                  target="_blank"
+                  class="social-link"
+                >
+                  <i class="bi bi-facebook"></i>
+                </a>
+                <a
+                  href="https://wa.me/4915129043024"
+                  target="_blank"
+                  class="social-link"
+                >
+                  <i class="bi bi-whatsapp"></i>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -2047,62 +1725,23 @@
 
     <!-- Footer -->
     <footer>
-      <p>© 2024 Beauty Studio. All Rights Reserved.</p>
+      <p>© Wellness Cosmo Beauty. All Rights Reserved.</p>
     </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+      <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor">
+        <path
+          d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4z"
+          transform="rotate(180, 8, 8)"
+        />
+      </svg>
+    </button>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Code injected by live-server -->
-    <script>
-      // <![CDATA[  <-- For SVG support
-      if ("WebSocket" in window) {
-        (function () {
-          function refreshCSS() {
-            var sheets = [].slice.call(document.getElementsByTagName("link"));
-            var head = document.getElementsByTagName("head")[0];
-            for (var i = 0; i < sheets.length; ++i) {
-              var elem = sheets[i];
-              var parent = elem.parentElement || head;
-              parent.removeChild(elem);
-              var rel = elem.rel;
-              if (
-                (elem.href && typeof rel != "string") ||
-                rel.length == 0 ||
-                rel.toLowerCase() == "stylesheet"
-              ) {
-                var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, "");
-                elem.href =
-                  url +
-                  (url.indexOf("?") >= 0 ? "&" : "?") +
-                  "_cacheOverride=" +
-                  new Date().valueOf();
-              }
-              parent.appendChild(elem);
-            }
-          }
-          var protocol =
-            window.location.protocol === "http:" ? "ws://" : "wss://";
-          var address =
-            protocol + window.location.host + window.location.pathname + "/ws";
-          var socket = new WebSocket(address);
-          socket.onmessage = function (msg) {
-            if (msg.data == "reload") window.location.reload();
-            else if (msg.data == "refreshcss") refreshCSS();
-          };
-          if (
-            sessionStorage &&
-            !sessionStorage.getItem("IsThisFirstTime_Log_From_LiveServer")
-          ) {
-            console.log("Live reload enabled.");
-            sessionStorage.setItem("IsThisFirstTime_Log_From_LiveServer", true);
-          }
-        })();
-      } else {
-        console.error(
-          "Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading."
-        );
-      }
-      // ]]>
-    </script>
+
+    <!-- Custom JavaScript -->
+    <script src="js/animation.js"></script>
   </body>
 </html>
