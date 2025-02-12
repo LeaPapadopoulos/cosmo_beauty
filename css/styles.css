@@ -660,3 +660,132 @@ header::after {
     transform: translateY(-4px);
   }
 }
+
+/* About Section Styles */
+.about-section {
+  padding: 100px 0;
+  background: linear-gradient(to bottom right, #fff, #f8fafc);
+  overflow: hidden;
+}
+
+.about-section h2 {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.about-section h2::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(to right, #4299e1, #63b3ed);
+  transform: translateX(-50%);
+}
+
+.about-image {
+  position: relative;
+  transform: translateX(-50px);
+  opacity: 0;
+  animation: slideIn 0.8s ease forwards;
+}
+
+.about-content {
+  transform: translateX(50px);
+  opacity: 0;
+  animation: slideIn 0.8s ease forwards 0.2s;
+}
+
+.about-image img {
+  transition: transform 0.3s ease;
+}
+
+.about-image:hover img {
+  transform: scale(1.02);
+}
+
+.features {
+  margin-top: 2rem;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 0.5rem 0;
+}
+
+.feature-item i {
+  color: #4299e1;
+  font-size: 1.25rem;
+  margin-right: 1rem;
+}
+
+.feature-item span {
+  color: #4a5568;
+  font-size: 1.1rem;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+  .about-section {
+    padding: 60px 0;
+  }
+
+  .about-image {
+    margin-bottom: 2rem;
+    transform: translateX(0);
+  }
+
+  .about-content {
+    text-align: center;
+    transform: translateX(0);
+  }
+
+  .feature-item {
+    justify-content: center;
+  }
+}
+
+/* Standardized Section Headers */
+h2.text-center {
+  margin-bottom: 3rem;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+h2.text-center::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(to right, #4299e1, #63b3ed);
+  transform: translateX(-50%);
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+  h2.text-center {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+}
