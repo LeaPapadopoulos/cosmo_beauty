@@ -38,12 +38,44 @@ document.addEventListener("DOMContentLoaded", function () {
   function animatePriceItems(container) {
     const items = container.querySelectorAll(".price-list-item");
     items.forEach((item, index) => {
+      item.style.opacity = "0";
+      item.style.transform = "translateX(-20px)";
+
       setTimeout(() => {
+        item.style.transition = "all 0.5s ease";
         item.style.opacity = "1";
         item.style.transform = "translateX(0)";
       }, 100 * index);
     });
   }
+
+  // Add hover animation for prices
+  document.querySelectorAll(".price-list-item").forEach((item) => {
+    const priceElement = item.querySelector(".col-2:last-child");
+
+    item.addEventListener("mouseenter", () => {
+      priceElement.style.transform = "scale(1.1)";
+      priceElement.style.transition = "transform 0.3s ease";
+    });
+
+    item.addEventListener("mouseleave", () => {
+      priceElement.style.transform = "scale(1)";
+    });
+  });
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute("href"));
+      if (target) {
+        target.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    });
+  });
 
   // Enhanced navbar scroll effect
   let lastScroll = 0;
