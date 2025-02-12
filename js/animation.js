@@ -103,4 +103,37 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     lastScroll = currentScroll;
   });
+
+  // Back to Top functionality
+  const backToTopButton = document.getElementById("backToTop");
+
+  // Show/hide button based on scroll position
+  window.addEventListener("scroll", () => {
+    if (window.pageYOffset > 300) {
+      backToTopButton.classList.add("visible");
+    } else {
+      backToTopButton.classList.remove("visible");
+    }
+  });
+
+  // Smooth scroll to top when clicked
+  backToTopButton.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
+
+  // Add hover animation for collapse arrows
+  document.querySelectorAll(".collapse-arrow").forEach((arrow) => {
+    const button = arrow.closest("button");
+
+    button.addEventListener("click", () => {
+      arrow.style.transition = "transform 0.3s ease";
+      arrow.style.transform =
+        button.getAttribute("aria-expanded") === "true"
+          ? "rotate(180deg)"
+          : "rotate(0deg)";
+    });
+  });
 });
