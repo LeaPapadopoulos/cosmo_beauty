@@ -136,4 +136,44 @@ document.addEventListener("DOMContentLoaded", function () {
           : "rotate(0deg)";
     });
   });
+
+  const tabsWrapper = document.querySelector(".price-tabs-wrapper");
+  const tabs = document.querySelector(".price-tabs");
+  const leftBtn = document.querySelector(".tab-scroll-left");
+  const rightBtn = document.querySelector(".tab-scroll-right");
+
+  if (tabs && leftBtn && rightBtn) {
+    const scrollAmount = 200;
+
+    leftBtn.addEventListener("click", () => {
+      tabs.scrollBy({
+        left: -scrollAmount,
+        behavior: "smooth",
+      });
+    });
+
+    rightBtn.addEventListener("click", () => {
+      tabs.scrollBy({
+        left: scrollAmount,
+        behavior: "smooth",
+      });
+    });
+
+    // Update button visibility based on scroll position
+    function updateScrollButtons() {
+      const isAtStart = tabs.scrollLeft <= 0;
+      const isAtEnd = tabs.scrollLeft >= tabs.scrollWidth - tabs.clientWidth;
+
+      leftBtn.style.opacity = isAtStart ? "0.5" : "1";
+      leftBtn.style.cursor = isAtStart ? "default" : "pointer";
+      rightBtn.style.opacity = isAtEnd ? "0.5" : "1";
+      rightBtn.style.cursor = isAtEnd ? "default" : "pointer";
+    }
+
+    tabs.addEventListener("scroll", updateScrollButtons);
+    window.addEventListener("resize", updateScrollButtons);
+
+    // Initial check
+    updateScrollButtons();
+  }
 });
