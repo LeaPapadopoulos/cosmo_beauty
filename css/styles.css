@@ -225,9 +225,12 @@ a.btn-light:hover {
 .price-list-container .row {
   --bs-gutter-x: 0;
 }
-
+.price-list-header .col-12,
+.price-list-header .col-6,
 .price-list-header .col-8,
 .price-list-header .col-2,
+.price-list-item .col-12,
+.price-list-item .col-6,
 .price-list-item .col-8,
 .price-list-item .col-2 {
   padding-left: 15px;
@@ -244,7 +247,8 @@ a.btn-light:hover {
 }
 
 /* Service name styling */
-.price-list-item .col-8 > div:first-child {
+.price-list-item .col-8,
+.price-list-item .col-12 > div:first-child {
   font-weight: 600;
   color: #2d3748;
   margin-bottom: 0.5rem;
@@ -1300,6 +1304,28 @@ h2.text-center::after {
 
 .gallery-nav i {
   color: #333;
+}
+
+.info-box {
+  background: #f5f9fd;
+  padding: 0.75rem;
+  border-radius: 8px;
+  text-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.info-label {
+  color: #718096;
+  font-size: 0.75rem;
+  margin-bottom: 0.25rem;
+}
+
+.info-value {
+  font-weight: 500;
+  color: #2d3748;
 }
 
 /*
