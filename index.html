@@ -36,6 +36,7 @@
         "@context": "https://schema.org",
         "@type": "BeautySalon",
         "name": "Wellness Cosmo Beauty",
+        "image": "images/IMG_6305.JPG",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "An d. Schmeilt 14",
@@ -43,6 +44,7 @@
           "postalCode": "40885",
           "addressCountry": "DE"
         },
+        "openingHours": "Mo-Fr 09:00-19:00",
         "telephone": "+4915129043024"
       }
     </script>
@@ -50,6 +52,21 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"
     />
+    <!-- Add preload for critical resources -->
+    <link 
+      rel="preload" 
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" 
+      as="style"
+    />
+    <link 
+      rel="preload" 
+      href="images/IMG_6305.JPG" 
+      as="image"
+    />
+    <!-- Add more comprehensive meta tags -->
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Wellness Cosmo Beauty">
+    <link rel="canonical" href="https://your-domain.com">
   </head>
   <body>
     <!-- Navbar -->
@@ -58,6 +75,10 @@
       role="navigation"
       aria-label="Main navigation"
     >
+      <!-- Add skip link for keyboard users -->
+      <a href="#main-content" class="visually-hidden-focusable">
+        Skip to main content
+      </a>
       <div class="container">
         <a class="navbar-brand" href="#">
           <img
@@ -132,6 +153,7 @@
               src="images/IMG_4405.jpeg" 
               alt="Beauty Studio Welcome" 
               class="img-fluid rounded-3 shadow-lg"
+              loading="lazy"
             />
           </div>
         </div>
@@ -244,7 +266,7 @@
     <!-- Price List Section -->
     <section id="pricelist" class="bg-white">
       <div class="container">
-        <h2 class="text-center">Wellness Cosmo Beauty Price List</h2>
+        <h2 class="text-center">Cosmo Beauty - Price List</h2>
 
         <!-- Price List Navigation -->
         <div class="price-tabs-wrapper">
@@ -1614,7 +1636,7 @@
             </div>
           </div>
           <div class="col-lg-6">
-            <div class="about-content">
+            <div class="hero-content">
               <h3 class="h4 mb-4">Your Beauty and Wellness Sanctuary</h3>
               <p class="lead mb-4">
                 At Wellness Cosmo Beauty, we believe in providing high-quality
@@ -1639,6 +1661,29 @@
                   <i class="bi bi-check2-circle"></i>
                   <span>Relaxing and comfortable atmosphere</span>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery-section bg-white">
+      <div class="container">
+        <h2 class="text-center mb-5">Our Space</h2>
+        <div class="gallery-grid">
+          <div class="gallery-main">
+            <img src="images/gallery/1.webp" alt="Main Gallery Image" class="gallery-img main-img rounded-3" data-index="0">
+          </div>
+          <div class="gallery-small">
+            <img src="images/gallery/2.webp" alt="Gallery Image 2" class="gallery-img rounded-3" data-index="1">
+            <img src="images/gallery/3.webp" alt="Gallery Image 3" class="gallery-img rounded-3" data-index="2">
+            <img src="images/gallery/4.webp" alt="Gallery Image 4" class="gallery-img rounded-3" data-index="3">
+            <div class="gallery-more rounded-3" data-index="4">
+              <img src="images/gallery/5.webp" alt="Gallery Image 5" class="gallery-img rounded-3">
+              <div class="gallery-more-overlay">
+                <span>More photos</span>
               </div>
             </div>
           </div>
@@ -1748,5 +1793,18 @@
 
     <!-- Custom JavaScript -->
     <script src="js/animation.js"></script>
+
+      <!-- Fullscreen Gallery Modal -->
+      <div class="gallery-modal" id="galleryModal">
+        <button class="gallery-close" aria-label="Close gallery">×</button>
+        <button class="gallery-nav prev" aria-label="Previous image">‹</button>
+        <button class="gallery-nav next" aria-label="Next image">›</button>
+        <div class="gallery-content">
+          <img src="" alt="Gallery Image" class="gallery-modal-img">
+          <div class="gallery-counter"></div>
+        </div>
+      </div>
+    </section>
+
   </body>
 </html>

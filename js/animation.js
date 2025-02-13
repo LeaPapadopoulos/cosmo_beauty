@@ -1,22 +1,66 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Staggered animation for service cards
-  const cards = document.querySelectorAll(".services .card");
-  cards.forEach((card, index) => {
-    card.style.opacity = "0";
-    card.style.transform = "translateY(20px)";
-    setTimeout(() => {
-      card.style.transition = "all 0.6s ease";
-      card.style.opacity = "1";
-      card.style.transform = "translateY(0)";
-    }, 100 * index);
-  });
-
-  // Enhance scroll animations
+  // Initialize Intersection Observer for all animated elements
   const observerOptions = {
     threshold: 0.2,
     rootMargin: "0px 0px -50px 0px",
   };
 
+  // Service Cards Animation
+  const cards = document.querySelectorAll(".services .card");
+  cards.forEach((card) => {
+    card.style.opacity = "0";
+    card.style.transform = "translateY(20px)";
+  });
+
+  const cardObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const card = entry.target;
+        const index = Array.from(cards).indexOf(card);
+        setTimeout(() => {
+          card.style.transition = "all 0.6s ease";
+          card.style.opacity = "1";
+          card.style.transform = "translateY(0)";
+        }, 100 * index);
+        cardObserver.unobserve(card);
+      }
+    });
+  }, observerOptions);
+
+  // Start observing each card
+  cards.forEach((card) => cardObserver.observe(card));
+
+  // Price List Animation
+  const priceListContainers = document.querySelectorAll(
+    ".price-list-container"
+  );
+  priceListContainers.forEach((container) => {
+    const items = container.querySelectorAll(".price-list-item");
+    items.forEach((item) => {
+      item.style.opacity = "0";
+      item.style.transform = "translateX(-20px)";
+    });
+
+    const priceObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const items = entry.target.querySelectorAll(".price-list-item");
+          items.forEach((item, index) => {
+            setTimeout(() => {
+              item.style.transition = "all 0.5s ease";
+              item.style.opacity = "1";
+              item.style.transform = "translateX(0)";
+            }, 100 * index);
+          });
+          priceObserver.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    priceObserver.observe(container);
+  });
+
+  // Enhance scroll animations
   const fadeElements = document.querySelectorAll(
     ".price-list-container, .services .card"
   );
@@ -28,6 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (entry.target.classList.contains("price-list-container")) {
           animatePriceItems(entry.target);
         }
+        observer.unobserve(entry.target);
       }
     });
   }, observerOptions);
@@ -176,4 +221,96 @@ document.addEventListener("DOMContentLoaded", function () {
     // Initial check
     updateScrollButtons();
   }
+
+  // Gallery functionality
+  const galleryImages = [
+    "images/gallery/1.webp",
+    "images/gallery/2.webp",
+    "images/gallery/3.webp",
+    "images/gallery/4.webp",
+    "images/gallery/5.webp",
+    "images/gallery/6.webp",
+  ];
+
+  let currentImageIndex = 0;
+
+  function initGallery() {
+    const modal = document.getElementById("galleryModal");
+    const modalImg = modal.querySelector(".gallery-modal-img");
+    const counter = modal.querySelector(".gallery-counter");
+    const closeBtn = modal.querySelector(".gallery-close");
+    const prevBtn = modal.querySelector(".prev");
+    const nextBtn = modal.querySelector(".next");
+
+    // Open modal on image click
+    document.querySelectorAll(".gallery-img, .gallery-more").forEach((item) => {
+      item.addEventListener("click", function () {
+        currentImageIndex = parseInt(this.dataset.index);
+        updateModalImage();
+        modal.classList.add("active");
+        document.body.style.overflow = "hidden";
+      });
+    });
+
+    // Close modal
+    closeBtn.addEventListener("click", () => {
+      modal.classList.remove("active");
+      document.body.style.overflow = "";
+    });
+
+    // Navigation
+    prevBtn.addEventListener("click", () => {
+      currentImageIndex =
+        (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+      updateModalImage();
+    });
+
+    nextBtn.addEventListener("click", () => {
+      currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+      updateModalImage();
+    });
+
+    // Keyboard navigation
+    document.addEventListener("keydown", (e) => {
+      if (!modal.classList.contains("active")) return;
+
+      if (e.key === "Escape") {
+        modal.classList.remove("active");
+        document.body.style.overflow = "";
+      }
+      if (e.key === "ArrowLeft") prevBtn.click();
+      if (e.key === "ArrowRight") nextBtn.click();
+    });
+
+    function updateModalImage() {
+      modalImg.src = galleryImages[currentImageIndex];
+      counter.textContent = `${currentImageIndex + 1} / ${
+        galleryImages.length
+      }`;
+    }
+  }
+
+  // Add this to your DOMContentLoaded event listener
+  initGallery();
+
+  // Use debouncing for scroll events
+  function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+      const later = () => {
+        clearTimeout(timeout);
+        func(...args);
+      };
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+    };
+  }
+
+  // Apply debouncing to scroll handlers
+  window.addEventListener(
+    "scroll",
+    debounce(() => {
+      // Existing scroll logic
+    }, 10)
+  );
 });
