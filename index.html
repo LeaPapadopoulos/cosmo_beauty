@@ -270,7 +270,7 @@
     <!-- Price List Section -->
     <section id="pricelist" class="bg-white">
       <div class="container">
-        <h2 class="text-center">Cosmo Beauty - Price List</h2>
+        <h2 class="text-center">Our Price List</h2>
 
         <!-- Price List Navigation -->
         <div class="price-tabs-wrapper">
@@ -2098,63 +2098,123 @@
       </div>
     </section>
 
-    <!-- Gallery Section -->
     <section id="gallery" class="gallery-section bg-white">
+      <h2 class="text-center">Our Space</h2>
       <div class="container">
-        <h2 class="text-center mb-5">Our Space</h2>
-        <div class="gallery-grid">
-          <div class="gallery-main">
-            <img
-              src="images/gallery/1.webp"
-              alt="Main Gallery Image"
-              class="gallery-img main-img rounded-3"
-              data-index="0"
-            />
-          </div>
-          <div class="gallery-small">
-            <img
-              src="images/gallery/2.webp"
-              alt="Gallery Image 2"
-              class="gallery-img rounded-3"
-              data-index="1"
-            />
-            <img
-              src="images/gallery/3.webp"
-              alt="Gallery Image 3"
-              class="gallery-img rounded-3"
-              data-index="2"
-            />
-            <img
-              src="images/gallery/4.webp"
-              alt="Gallery Image 4"
-              class="gallery-img rounded-3"
-              data-index="3"
-            />
-            <div class="gallery-more rounded-3" data-index="4">
+        <div class="row g-2">
+          <!-- Main large image -->
+          <div class="col-12 col-md-6">
+            <div class="gallery-main rounded-3">
               <img
-                src="images/gallery/5.webp"
-                alt="Gallery Image 5"
-                class="gallery-img rounded-3"
+                src="images/gallery/1.webp"
+                alt="Gallery Image 1"
+                class="img-fluid w-100 h-100 object-fit-cover rounded-3 shadow-lg"
+                data-bs-toggle="modal"
+                data-bs-target="#galleryModal"
+                data-index="0"
               />
-              <div class="gallery-more-overlay">
-                <span>More photos</span>
+            </div>
+          </div>
+          <!-- Side images -->
+          <div class="col-12 col-md-6">
+            <div class="row g-2">
+              <div class="col-6">
+                <div class="gallery-item rounded-3">
+                  <img
+                    src="images/gallery/2.webp"
+                    alt="Gallery Image 2"
+                    class="img-fluid w-100 h-100 object-fit-cover rounded-3 shadow-lg"
+                    data-bs-toggle="modal"
+                    data-bs-target="#galleryModal"
+                    data-index="1"
+                  />
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="gallery-item rounded-3">
+                  <img
+                    src="images/gallery/3.webp"
+                    alt="Gallery Image 3"
+                    class="img-fluid w-100 h-100 object-fit-cover rounded-3 shadow-lg"
+                    data-bs-toggle="modal"
+                    data-bs-target="#galleryModal"
+                    data-index="2"
+                  />
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="gallery-item rounded-3">
+                  <img
+                    src="images/gallery/4.webp"
+                    alt="Gallery Image 4"
+                    class="img-fluid w-100 h-100 object-fit-cover rounded-3 shadow-lg"
+                    data-bs-toggle="modal"
+                    data-bs-target="#galleryModal"
+                    data-index="3"
+                  />
+                </div>
+              </div>
+              <div class="col-6">
+                <div
+                  class="gallery-item position-relative rounded-3"
+                  data-bs-toggle="modal"
+                  data-bs-target="#galleryModal"
+                  data-index="4"
+                >
+                  <img
+                    src="images/gallery/5.webp"
+                    alt="Gallery Image 5"
+                    class="img-fluid w-100 h-100 object-fit-cover rounded-3 shadow-lg"
+                  />
+                  <div class="more-overlay rounded-3">
+                    <span class="text-white">Show all photos</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- Fullscreen Gallery Modal -->
-      <div class="gallery-modal" id="galleryModal">
-        <button class="gallery-close" aria-label="Close gallery">×</button>
-        <button class="gallery-nav prev" aria-label="Previous image">‹</button>
-        <button class="gallery-nav next" aria-label="Next image">›</button>
-        <div class="gallery-content">
-          <img src="" alt="Gallery Image" class="gallery-modal-img" />
-          <div class="gallery-counter"></div>
+    <!-- Gallery Modal -->
+    <div class="modal fade" id="galleryModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content bg-black">
+          <button
+            type="button"
+            class="btn-close btn-close-white position-absolute top-0 end-0 m-4 z-3"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+          <div
+            class="modal-body d-flex align-items-center justify-content-center position-relative p-0"
+          >
+            <button
+              class="btn btn-light rounded-circle position-absolute start-0 ms-4 gallery-nav prev"
+              type="button"
+            >
+              <i class="bi bi-chevron-left"></i>
+            </button>
+            <img
+              src=""
+              class="img-fluid mw-100 mh-100"
+              id="modalImage"
+              alt="Gallery Image"
+            />
+            <button
+              class="btn btn-light rounded-circle position-absolute end-0 me-4 gallery-nav next"
+              type="button"
+            >
+              <i class="bi bi-chevron-right"></i>
+            </button>
+            <div
+              class="gallery-counter position-absolute bottom-0 start-50 translate-middle-x mb-4 text-white"
+            ></div>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
 
     <!-- Contact Section -->
     <section id="contact" class="contact-section">

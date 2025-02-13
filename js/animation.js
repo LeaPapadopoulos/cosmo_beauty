@@ -236,26 +236,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function initGallery() {
     const modal = document.getElementById("galleryModal");
-    const modalImg = modal.querySelector(".gallery-modal-img");
+    const modalImg = document.getElementById("modalImage");
     const counter = modal.querySelector(".gallery-counter");
-    const closeBtn = modal.querySelector(".gallery-close");
     const prevBtn = modal.querySelector(".prev");
     const nextBtn = modal.querySelector(".next");
 
-    // Open modal on image click
-    document.querySelectorAll(".gallery-img, .gallery-more").forEach((item) => {
-      item.addEventListener("click", function () {
-        currentImageIndex = parseInt(this.dataset.index);
-        updateModalImage();
-        modal.classList.add("active");
-        document.body.style.overflow = "hidden";
-      });
-    });
+    // Initialize Bootstrap modal
+    const bsModal = new bootstrap.Modal(modal);
 
-    // Close modal
-    closeBtn.addEventListener("click", () => {
-      modal.classList.remove("active");
-      document.body.style.overflow = "";
+    // Open modal and set image on click
+    document.querySelectorAll("[data-index]").forEach((img) => {
+      img.addEventListener("click", () => {
+        currentImageIndex = parseInt(img.getAttribute("data-index"));
+        updateModalImage();
+        bsModal.show();
+      });
     });
 
     // Navigation
@@ -272,14 +267,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Keyboard navigation
     document.addEventListener("keydown", (e) => {
-      if (!modal.classList.contains("active")) return;
+      if (!modal.classList.contains("show")) return;
 
-      if (e.key === "Escape") {
-        modal.classList.remove("active");
-        document.body.style.overflow = "";
-      }
       if (e.key === "ArrowLeft") prevBtn.click();
       if (e.key === "ArrowRight") nextBtn.click();
+      if (e.key === "Escape") bsModal.hide();
     });
 
     function updateModalImage() {
