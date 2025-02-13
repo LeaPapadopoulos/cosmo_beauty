@@ -28,6 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (entry.target.classList.contains("price-list-container")) {
           animatePriceItems(entry.target);
         }
+        observer.unobserve(entry.target);
       }
     });
   }, observerOptions);
@@ -247,4 +248,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Add this to your DOMContentLoaded event listener
   initGallery();
+
+  // Use debouncing for scroll events
+  function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+      const later = () => {
+        clearTimeout(timeout);
+        func(...args);
+      };
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+    };
+  }
+
+  // Apply debouncing to scroll handlers
+  window.addEventListener(
+    "scroll",
+    debounce(() => {
+      // Existing scroll logic
+    }, 10)
+  );
 });
