@@ -1,22 +1,66 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Staggered animation for service cards
-  const cards = document.querySelectorAll(".services .card");
-  cards.forEach((card, index) => {
-    card.style.opacity = "0";
-    card.style.transform = "translateY(20px)";
-    setTimeout(() => {
-      card.style.transition = "all 0.6s ease";
-      card.style.opacity = "1";
-      card.style.transform = "translateY(0)";
-    }, 100 * index);
-  });
-
-  // Enhance scroll animations
+  // Initialize Intersection Observer for all animated elements
   const observerOptions = {
     threshold: 0.2,
     rootMargin: "0px 0px -50px 0px",
   };
 
+  // Service Cards Animation
+  const cards = document.querySelectorAll(".services .card");
+  cards.forEach((card) => {
+    card.style.opacity = "0";
+    card.style.transform = "translateY(20px)";
+  });
+
+  const cardObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const card = entry.target;
+        const index = Array.from(cards).indexOf(card);
+        setTimeout(() => {
+          card.style.transition = "all 0.6s ease";
+          card.style.opacity = "1";
+          card.style.transform = "translateY(0)";
+        }, 100 * index);
+        cardObserver.unobserve(card);
+      }
+    });
+  }, observerOptions);
+
+  // Start observing each card
+  cards.forEach((card) => cardObserver.observe(card));
+
+  // Price List Animation
+  const priceListContainers = document.querySelectorAll(
+    ".price-list-container"
+  );
+  priceListContainers.forEach((container) => {
+    const items = container.querySelectorAll(".price-list-item");
+    items.forEach((item) => {
+      item.style.opacity = "0";
+      item.style.transform = "translateX(-20px)";
+    });
+
+    const priceObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const items = entry.target.querySelectorAll(".price-list-item");
+          items.forEach((item, index) => {
+            setTimeout(() => {
+              item.style.transition = "all 0.5s ease";
+              item.style.opacity = "1";
+              item.style.transform = "translateX(0)";
+            }, 100 * index);
+          });
+          priceObserver.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    priceObserver.observe(container);
+  });
+
+  // Enhance scroll animations
   const fadeElements = document.querySelectorAll(
     ".price-list-container, .services .card"
   );
