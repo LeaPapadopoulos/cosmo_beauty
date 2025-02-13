@@ -176,4 +176,75 @@ document.addEventListener("DOMContentLoaded", function () {
     // Initial check
     updateScrollButtons();
   }
+
+  // Gallery functionality
+  const galleryImages = [
+    "images/gallery/1.webp",
+    "images/gallery/2.webp",
+    "images/gallery/3.webp",
+    "images/gallery/4.webp",
+    "images/gallery/5.webp",
+    "images/gallery/6.webp",
+  ];
+
+  let currentImageIndex = 0;
+
+  function initGallery() {
+    const modal = document.getElementById("galleryModal");
+    const modalImg = modal.querySelector(".gallery-modal-img");
+    const counter = modal.querySelector(".gallery-counter");
+    const closeBtn = modal.querySelector(".gallery-close");
+    const prevBtn = modal.querySelector(".prev");
+    const nextBtn = modal.querySelector(".next");
+
+    // Open modal on image click
+    document.querySelectorAll(".gallery-img, .gallery-more").forEach((item) => {
+      item.addEventListener("click", function () {
+        currentImageIndex = parseInt(this.dataset.index);
+        updateModalImage();
+        modal.classList.add("active");
+        document.body.style.overflow = "hidden";
+      });
+    });
+
+    // Close modal
+    closeBtn.addEventListener("click", () => {
+      modal.classList.remove("active");
+      document.body.style.overflow = "";
+    });
+
+    // Navigation
+    prevBtn.addEventListener("click", () => {
+      currentImageIndex =
+        (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+      updateModalImage();
+    });
+
+    nextBtn.addEventListener("click", () => {
+      currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+      updateModalImage();
+    });
+
+    // Keyboard navigation
+    document.addEventListener("keydown", (e) => {
+      if (!modal.classList.contains("active")) return;
+
+      if (e.key === "Escape") {
+        modal.classList.remove("active");
+        document.body.style.overflow = "";
+      }
+      if (e.key === "ArrowLeft") prevBtn.click();
+      if (e.key === "ArrowRight") nextBtn.click();
+    });
+
+    function updateModalImage() {
+      modalImg.src = galleryImages[currentImageIndex];
+      counter.textContent = `${currentImageIndex + 1} / ${
+        galleryImages.length
+      }`;
+    }
+  }
+
+  // Add this to your DOMContentLoaded event listener
+  initGallery();
 });

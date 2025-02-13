@@ -244,7 +244,7 @@
     <!-- Price List Section -->
     <section id="pricelist" class="bg-white">
       <div class="container">
-        <h2 class="text-center">Wellness Cosmo Beauty Price List</h2>
+        <h2 class="text-center">Cosmo Beauty - Price List</h2>
 
         <!-- Price List Navigation -->
         <div class="price-tabs-wrapper">
@@ -1646,6 +1646,29 @@
       </div>
     </section>
 
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery-section bg-white">
+      <div class="container">
+        <h2 class="text-center mb-5">Our Space</h2>
+        <div class="gallery-grid">
+          <div class="gallery-main">
+            <img src="images/gallery/1.webp" alt="Main Gallery Image" class="gallery-img main-img rounded-3" data-index="0">
+          </div>
+          <div class="gallery-small">
+            <img src="images/gallery/2.webp" alt="Gallery Image 2" class="gallery-img rounded-3" data-index="1">
+            <img src="images/gallery/3.webp" alt="Gallery Image 3" class="gallery-img rounded-3" data-index="2">
+            <img src="images/gallery/4.webp" alt="Gallery Image 4" class="gallery-img rounded-3" data-index="3">
+            <div class="gallery-more rounded-3" data-index="4">
+              <img src="images/gallery/5.webp" alt="Gallery Image 5" class="gallery-img rounded-3">
+              <div class="gallery-more-overlay">
+                <span>More photos</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="contact-section">
       <div class="container">
@@ -1748,5 +1771,17 @@
 
     <!-- Custom JavaScript -->
     <script src="js/animation.js"></script>
+
+      <!-- Fullscreen Gallery Modal -->
+      <div class="gallery-modal" id="galleryModal">
+        <button class="gallery-close" aria-label="Close gallery">×</button>
+        <button class="gallery-nav prev" aria-label="Previous image">‹</button>
+        <button class="gallery-nav next" aria-label="Next image">›</button>
+        <div class="gallery-content">
+          <img src="" alt="Gallery Image" class="gallery-modal-img">
+          <div class="gallery-counter"></div>
+        </div>
+      </div>
+    </section>
   </body>
 </html>
