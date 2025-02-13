@@ -71,6 +71,10 @@ nav {
   border-bottom: 1px solid #e0e0e0;
 }
 
+nav .navbar-brand {
+  padding: 0;
+}
+
 nav .navbar-brand,
 nav .nav-link {
   color: #333;
