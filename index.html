@@ -75,12 +75,53 @@
       role="navigation"
       aria-label="Main navigation"
     >
-      <!-- Add skip link for keyboard users -->
-      <a href="#main-content" class="visually-hidden-focusable">
-        Skip to main content
-      </a>
       <div class="container">
-        <a class="navbar-brand" href="#">
+        <!-- Mobile Language Switcher (Left) -->
+        <div class="d-flex d-lg-none align-items-center order-1">
+          <div class="nav-item dropdown navbar-language-switcher">
+            <button
+              class="nav-link btn btn-link dropdown-toggle d-flex align-items-center"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <i class="bi bi-globe2 me-1"></i>
+              <span class="current-language">DE</span>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-start language-dropdown">
+              <li>
+                <button
+                  class="dropdown-item d-flex align-items-center"
+                  data-lang="de"
+                >
+                  <span class="fi fi-de me-2"></span>
+                  Deutsch
+                </button>
+              </li>
+              <li>
+                <button
+                  class="dropdown-item d-flex align-items-center"
+                  data-lang="en"
+                >
+                  <span class="fi fi-gb me-2"></span>
+                  English
+                </button>
+              </li>
+              <li>
+                <button
+                  class="dropdown-item d-flex align-items-center"
+                  data-lang="ru"
+                >
+                  <span class="fi fi-ru me-2"></span>
+                  Русский
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Logo (Centered on mobile) -->
+        <a class="navbar-brand mx-auto order-2" href="#">
           <img
             src="images/IMG_6305.JPG"
             alt="cosmo-beauty-logo"
@@ -88,8 +129,10 @@
             style="height: 50px; object-fit: contain"
           />
         </a>
+
+        <!-- Burger Menu Button (Right) -->
         <button
-          class="navbar-toggler"
+          class="navbar-toggler order-3"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNav"
@@ -99,7 +142,9 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
+
+        <!-- Navigation Items -->
+        <div class="collapse navbar-collapse order-4" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
               <a class="nav-link" href="#services">Services</a>
@@ -113,11 +158,10 @@
             <li class="nav-item">
               <a class="nav-link" href="#contact">Contact</a>
             </li>
-
             <!-- Book Now Button -->
             <li class="nav-item">
               <a
-                class="nav-link btn btn-primary text-white px-3 ms-2 me-2"
+                class="nav-link btn btn-primary text-white px-3 ms-2"
                 href="https://www.planity.com/de-DE/wellness-cosmo-beauty-40885-ratingen"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -125,9 +169,10 @@
                 Book Now
               </a>
             </li>
-
-            <!-- Add Language Switcher -->
-            <li class="nav-item dropdown">
+            <!-- Desktop Language Switcher -->
+            <li
+              class="nav-item dropdown navbar-language-switcher d-none d-lg-block ms-2"
+            >
               <button
                 class="nav-link btn btn-link dropdown-toggle d-flex align-items-center"
                 type="button"
