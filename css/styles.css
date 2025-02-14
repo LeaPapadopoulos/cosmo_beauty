@@ -1097,7 +1097,7 @@ h2.text-center::after {
 
 /* Add the underline indicator for active tab */
 .price-tabs .nav-link.active::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -0.5rem; /* Align with the bottom padding */
   left: 0;
@@ -1328,5 +1328,69 @@ h2.text-center::after {
   color: #2d3748;
 }
 
-/*
-</rewritten_file>
+/* Language Switcher Styles */
+.language-dropdown {
+  min-width: 200px;
+  padding: 0.5rem 0;
+  margin-top: 0.5rem;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.12);
+  border: 1px solid #ddd;
+  border-radius: 12px;
+}
+
+.language-dropdown .dropdown-item {
+  padding: 0.75rem 1rem;
+  color: #222;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-item .dropdown-toggle {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  margin-right: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: transparent;
+}
+
+/* Fix for dropdown arrow */
+.nav-item .dropdown-toggle::after {
+  display: inline-block;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+  content: "";
+  border-top: 0.3em solid;
+  border-right: 0.3em solid transparent;
+  border-bottom: 0;
+  border-left: 0.3em solid transparent;
+  position: static; /* This ensures the arrow stays in line */
+}
+
+.nav-item .dropdown-toggle:hover {
+  background-color: #f7f7f7;
+}
+
+.current-language {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+  .language-dropdown {
+    width: 100%;
+    margin-top: 0;
+    border-radius: 8px;
+  }
+
+  .nav-item .dropdown-toggle {
+    width: 100%;
+    justify-content: center;
+    margin: 0.5rem 0;
+  }
+}
