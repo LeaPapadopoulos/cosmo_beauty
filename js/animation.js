@@ -230,6 +230,18 @@ document.addEventListener("DOMContentLoaded", function () {
     "images/gallery/4.webp",
     "images/gallery/5.webp",
     "images/gallery/6.webp",
+    "images/gallery/WEB_CBW_14.JPG",
+    "images/gallery/WEB_CBW_33.JPG",
+    "images/gallery/WEB_CBW_37.JPG",
+    "images/gallery/WEB_CBW_38.JPG",
+    "images/gallery/WEB_CBW_40.JPG",
+    "images/gallery/WEB_CBW_42.JPG",
+    "images/gallery/WEB_CBW_47.JPG",
+    "images/gallery/WEB_CBW_53.JPG",
+    "images/gallery/WEB_CBW_58.JPG",
+    "images/gallery/WEB_CBW_63.JPG",
+    "images/gallery/WEB_CBW_66.JPG",
+    "images/gallery/WEB_CBW_68.JPG",
   ];
 
   let currentImageIndex = 0;
