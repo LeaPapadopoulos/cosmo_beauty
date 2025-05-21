@@ -235,8 +235,6 @@ document.addEventListener("DOMContentLoaded", function () {
     "images/gallery/WEB_CBW_37.JPG",
     "images/gallery/WEB_CBW_38.JPG",
     "images/gallery/WEB_CBW_40.JPG",
-    "images/gallery/WEB_CBW_42.JPG",
-    "images/gallery/WEB_CBW_47.JPG",
     "images/gallery/WEB_CBW_53.JPG",
     "images/gallery/WEB_CBW_58.JPG",
     "images/gallery/WEB_CBW_63.JPG",
